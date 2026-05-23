@@ -1,0 +1,27 @@
+{
+  "name": "@clientapi/pbs",
+  "version": "2026.5.23",
+  "description": "OpenAPI client for @clientapi/pbs",
+  "author": "OpenAPI-Generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/client-api/pbs-ts.git"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "prepare": "npm run build",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^4.0 || ^5.0",
+    "vitest": "^2.1.0",
+    "@types/node": "^20.0.0",
+    "undici": "^7.24.4",
+    "ws": "^8.18.0",
+    "@types/ws": "^8.5.0"
+  }
+}

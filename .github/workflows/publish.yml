@@ -1,0 +1,54 @@
+name: publish
+
+# Builds the package and uploads it to npm when a GitHub release is
+# published. Requires `NPM_TOKEN` to be set as a repo secret
+# (Settings → Secrets and variables → Actions). Use an "Automation"
+# token (`Granular access token` → `Read & write packages` scoped to
+# this package) — classic publish tokens also work but are
+# overscoped.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # `actions/setup-node` with a registry-url enables OIDC trusted
+      # publishing for npm — `id-token: write` is the contract.
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      # The release tag is the authoritative version source. The tag
+      # value (minus the leading `v`) replaces the synced version in
+      # package.json so PyPI/npm see the release-time value. npm
+      # requires valid SemVer 2.0 — `v2026.5.23` works; for intra-day
+      # releases use a SemVer prerelease like `v2026.5.24-0` (orders
+      # BEFORE `2026.5.24`) or just bump the date.
+      - name: Set version from release tag
+        if: github.event_name == 'release'
+        run: |
+          set -eu
+          TAG="${GITHUB_REF_NAME#v}"
+          echo "Using version: $TAG (from tag $GITHUB_REF_NAME)"
+          npm version "$TAG" --no-git-tag-version --allow-same-version
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Build (CJS + ESM)
+        run: npm run build
+
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
