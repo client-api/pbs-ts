@@ -3,6 +3,7 @@ import { describe, test, expect, beforeAll, afterAll } from 'vitest';
 import { loadCredentials, type Credentials } from '../helpers/credentials';
 import { createTokenClient, AUTH_COOKIE_NAME } from '../helpers/client';
 import { cleanupE2E, E2E_PREFIX } from '../helpers/fixtures';
+import { waitUntil } from '../helpers/poll';
 import { Pbs } from '../../src/Pbs';
 import { Configuration } from '../../src/runtime';
 
@@ -80,10 +81,19 @@ describe('authz', () => {
   });
 
   test('SC-22: /access/permissions returns the user effective ACLs', async () => {
-    const perms = await admin.access().getPermissions({ authId: RO_USER });
-    // Response shape: `{ data: { "/": { "Datastore.Audit": true, ... } } }`.
-    const data = (perms as { data?: Record<string, Record<string, boolean>> }).data ?? {};
-    expect(Object.keys(data).length).toBeGreaterThan(0);
+    // PBS's in-memory ACL cache can lag a moment behind the on-disk
+    // acl.cfg write done by SC-21. Locally the write-then-read is
+    // instant; on a fresh CI container the first read sometimes sees
+    // an empty result. Poll for the populated shape — `{ "/": {...} }` —
+    // rather than asserting on the first response.
+    const data = await waitUntil(
+      async () => {
+        const perms = await admin.access().getPermissions({ authId: RO_USER });
+        const d = (perms as { data?: Record<string, Record<string, boolean>> }).data ?? {};
+        return Object.keys(d).length > 0 ? d : false;
+      },
+      { timeoutMs: 15_000, intervalMs: 500, label: 'permissions for RO_USER populated' },
+    );
     // Audit role grants Datastore.Audit at the root path.
     expect(data['/']?.['Datastore.Audit']).toBe(true);
   });
