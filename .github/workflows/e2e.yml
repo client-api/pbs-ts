@@ -33,9 +33,12 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Starts ghcr.io/client-api/proxmox-docker/pbs-test:4.2, waits for it
-      # to become healthy, and exports PROXMOX_* + capability flags into
-      # $GITHUB_ENV. Cleans up via a `post:` step automatically.
+      # to become healthy, and exports PROXMOX_* credentials into
+      # $GITHUB_ENV. Capability flags come back as step outputs — the
+      # next step mirrors them into env so capability-gated tests see
+      # PROXMOX_KVM_AVAILABLE / PROXMOX_CGROUPV2_AVAILABLE.
       - uses: client-api/proxmox-docker-action@v1
+        id: proxmox
         with:
           product: pbs
           tag: '4.2'
@@ -45,3 +48,5 @@ jobs:
           # The container ships a self-signed TLS cert; accept it for the
           # duration of the test job only. Production code must never set this.
           NODE_TLS_REJECT_UNAUTHORIZED: '0'
+          PROXMOX_KVM_AVAILABLE: ${{ steps.proxmox.outputs.kvm-available }}
+          PROXMOX_CGROUPV2_AVAILABLE: ${{ steps.proxmox.outputs.cgroupv2-available }}
