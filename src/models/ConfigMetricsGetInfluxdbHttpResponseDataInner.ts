@@ -46,7 +46,7 @@ export interface ConfigMetricsGetInfluxdbHttpResponseDataInner {
      * @type {number}
      * @memberof ConfigMetricsGetInfluxdbHttpResponseDataInner
      */
-    maxBodySize?: number;
+    maxBodySize?: bigint | string | number;
 
     /**
      * Metrics Server ID.
@@ -121,7 +121,7 @@ export function ConfigMetricsGetInfluxdbHttpResponseDataInnerFromJSONTyped(json:
         
         'enable': json['enable'] == null ? undefined : json['enable'],
         
-        'maxBodySize': json['max-body-size'] == null ? undefined : json['max-body-size'],
+        'maxBodySize': json['max-body-size'] == null ? undefined : BigInt(json['max-body-size']),
         
         'name': json['name'],
         
@@ -154,7 +154,7 @@ export function ConfigMetricsGetInfluxdbHttpResponseDataInnerToJSONTyped(value?:
         
         'enable': value['enable'],
         
-        'max-body-size': value['maxBodySize'],
+        'max-body-size': value['maxBodySize'] == null ? undefined : String(value['maxBodySize']),
         
         'name': value['name'],
         

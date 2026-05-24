@@ -46,49 +46,49 @@ export interface AdminPruneGetPruneResponseDataInner {
      * @type {number}
      * @memberof AdminPruneGetPruneResponseDataInner
      */
-    keepDaily?: number;
+    keepDaily?: bigint | string | number;
 
     /**
      * Number of hourly backups to keep.
      * @type {number}
      * @memberof AdminPruneGetPruneResponseDataInner
      */
-    keepHourly?: number;
+    keepHourly?: bigint | string | number;
 
     /**
      * Number of backups to keep.
      * @type {number}
      * @memberof AdminPruneGetPruneResponseDataInner
      */
-    keepLast?: number;
+    keepLast?: bigint | string | number;
 
     /**
      * Number of monthly backups to keep.
      * @type {number}
      * @memberof AdminPruneGetPruneResponseDataInner
      */
-    keepMonthly?: number;
+    keepMonthly?: bigint | string | number;
 
     /**
      * Number of weekly backups to keep.
      * @type {number}
      * @memberof AdminPruneGetPruneResponseDataInner
      */
-    keepWeekly?: number;
+    keepWeekly?: bigint | string | number;
 
     /**
      * Number of yearly backups to keep.
      * @type {number}
      * @memberof AdminPruneGetPruneResponseDataInner
      */
-    keepYearly?: number;
+    keepYearly?: bigint | string | number;
 
     /**
      * Endtime of the last run.
      * @type {number}
      * @memberof AdminPruneGetPruneResponseDataInner
      */
-    lastRunEndtime?: number;
+    lastRunEndtime?: bigint | string | number;
 
     /**
      * Result of the last run.
@@ -116,7 +116,7 @@ export interface AdminPruneGetPruneResponseDataInner {
      * @type {number}
      * @memberof AdminPruneGetPruneResponseDataInner
      */
-    nextRun?: number;
+    nextRun?: bigint | string | number;
 
     /**
      * Namespace.
@@ -186,19 +186,19 @@ export function AdminPruneGetPruneResponseDataInnerFromJSONTyped(json: any, igno
         
         'id': json['id'],
         
-        'keepDaily': json['keep-daily'] == null ? undefined : json['keep-daily'],
+        'keepDaily': json['keep-daily'] == null ? undefined : BigInt(json['keep-daily']),
         
-        'keepHourly': json['keep-hourly'] == null ? undefined : json['keep-hourly'],
+        'keepHourly': json['keep-hourly'] == null ? undefined : BigInt(json['keep-hourly']),
         
-        'keepLast': json['keep-last'] == null ? undefined : json['keep-last'],
+        'keepLast': json['keep-last'] == null ? undefined : BigInt(json['keep-last']),
         
-        'keepMonthly': json['keep-monthly'] == null ? undefined : json['keep-monthly'],
+        'keepMonthly': json['keep-monthly'] == null ? undefined : BigInt(json['keep-monthly']),
         
-        'keepWeekly': json['keep-weekly'] == null ? undefined : json['keep-weekly'],
+        'keepWeekly': json['keep-weekly'] == null ? undefined : BigInt(json['keep-weekly']),
         
-        'keepYearly': json['keep-yearly'] == null ? undefined : json['keep-yearly'],
+        'keepYearly': json['keep-yearly'] == null ? undefined : BigInt(json['keep-yearly']),
         
-        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : json['last-run-endtime'],
+        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : BigInt(json['last-run-endtime']),
         
         'lastRunState': json['last-run-state'] == null ? undefined : json['last-run-state'],
         
@@ -206,7 +206,7 @@ export function AdminPruneGetPruneResponseDataInnerFromJSONTyped(json: any, igno
         
         'maxDepth': json['max-depth'] == null ? undefined : json['max-depth'],
         
-        'nextRun': json['next-run'] == null ? undefined : json['next-run'],
+        'nextRun': json['next-run'] == null ? undefined : BigInt(json['next-run']),
         
         'ns': json['ns'] == null ? undefined : json['ns'],
         
@@ -235,19 +235,19 @@ export function AdminPruneGetPruneResponseDataInnerToJSONTyped(value?: AdminPrun
         
         'id': value['id'],
         
-        'keep-daily': value['keepDaily'],
+        'keep-daily': value['keepDaily'] == null ? undefined : String(value['keepDaily']),
         
-        'keep-hourly': value['keepHourly'],
+        'keep-hourly': value['keepHourly'] == null ? undefined : String(value['keepHourly']),
         
-        'keep-last': value['keepLast'],
+        'keep-last': value['keepLast'] == null ? undefined : String(value['keepLast']),
         
-        'keep-monthly': value['keepMonthly'],
+        'keep-monthly': value['keepMonthly'] == null ? undefined : String(value['keepMonthly']),
         
-        'keep-weekly': value['keepWeekly'],
+        'keep-weekly': value['keepWeekly'] == null ? undefined : String(value['keepWeekly']),
         
-        'keep-yearly': value['keepYearly'],
+        'keep-yearly': value['keepYearly'] == null ? undefined : String(value['keepYearly']),
         
-        'last-run-endtime': value['lastRunEndtime'],
+        'last-run-endtime': value['lastRunEndtime'] == null ? undefined : String(value['lastRunEndtime']),
         
         'last-run-state': value['lastRunState'],
         
@@ -255,7 +255,7 @@ export function AdminPruneGetPruneResponseDataInnerToJSONTyped(value?: AdminPrun
         
         'max-depth': value['maxDepth'],
         
-        'next-run': value['nextRun'],
+        'next-run': value['nextRun'] == null ? undefined : String(value['nextRun']),
         
         'ns': value['ns'],
         

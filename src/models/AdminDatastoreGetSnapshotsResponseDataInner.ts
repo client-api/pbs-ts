@@ -47,7 +47,7 @@ export interface AdminDatastoreGetSnapshotsResponseDataInner {
      * @type {number}
      * @memberof AdminDatastoreGetSnapshotsResponseDataInner
      */
-    backupTime: number;
+    backupTime: bigint | string | number;
 
     /**
      * Backup types.
@@ -96,7 +96,7 @@ export interface AdminDatastoreGetSnapshotsResponseDataInner {
      * @type {number}
      * @memberof AdminDatastoreGetSnapshotsResponseDataInner
      */
-    size?: number;
+    size?: bigint | string | number;
 
     /**
      * 
@@ -145,7 +145,7 @@ export function AdminDatastoreGetSnapshotsResponseDataInnerFromJSONTyped(json: a
         
         'backupId': json['backup-id'],
         
-        'backupTime': json['backup-time'],
+        'backupTime': BigInt(json['backup-time']),
         
         'backupType': PbsBackupTypeEnumFromJSON(json['backup-type']),
         
@@ -159,7 +159,7 @@ export function AdminDatastoreGetSnapshotsResponseDataInnerFromJSONTyped(json: a
         
         '_protected': json['protected'],
         
-        'size': json['size'] == null ? undefined : json['size'],
+        'size': json['size'] == null ? undefined : BigInt(json['size']),
         
         'verification': json['verification'] == null ? undefined : AdminDatastoreGetSnapshotsResponseDataInnerVerificationFromJSON(json['verification']),
         
@@ -180,7 +180,7 @@ export function AdminDatastoreGetSnapshotsResponseDataInnerToJSONTyped(value?: A
         
         'backup-id': value['backupId'],
         
-        'backup-time': value['backupTime'],
+        'backup-time': String(value['backupTime']),
         
         'backup-type': PbsBackupTypeEnumToJSON(value['backupType']),
         
@@ -194,7 +194,7 @@ export function AdminDatastoreGetSnapshotsResponseDataInnerToJSONTyped(value?: A
         
         'protected': value['_protected'],
         
-        'size': value['size'],
+        'size': value['size'] == null ? undefined : String(value['size']),
         
         'verification': AdminDatastoreGetSnapshotsResponseDataInnerVerificationToJSON(value['verification']),
         

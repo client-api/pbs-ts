@@ -52,7 +52,9 @@ export function PbsNodesConfigInlineEnumFromJSON(json: any): PbsNodesConfigInlin
 }
 
 export function PbsNodesConfigInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesConfigInlineEnum {
+
     return json as PbsNodesConfigInlineEnum;
+
 }
 
 export function PbsNodesConfigInlineEnumToJSON(value?: PbsNodesConfigInlineEnum | null): any {

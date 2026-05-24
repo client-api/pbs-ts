@@ -25,84 +25,84 @@ export interface TapeDriveGetVolumeStatisticsResponseData {
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    beginningOfMediumPasses: number;
+    beginningOfMediumPasses: bigint | string | number;
 
     /**
      * Last load read compression ratio
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    lastLoadReadCompressionRatio: number;
+    lastLoadReadCompressionRatio: bigint | string | number;
 
     /**
      * Last load write compression ratio
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    lastLoadWriteCompressionRatio: number;
+    lastLoadWriteCompressionRatio: bigint | string | number;
 
     /**
      * Last mount bytes read
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    lastMountBytesRead: number;
+    lastMountBytesRead: bigint | string | number;
 
     /**
      * Last mount bytes written
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    lastMountBytesWritten: number;
+    lastMountBytesWritten: bigint | string | number;
 
     /**
      * Last mount unrecovered read errors
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    lastMountUnrecoveredReadErrors: number;
+    lastMountUnrecoveredReadErrors: bigint | string | number;
 
     /**
      * Last mount unrecovered write errors
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    lastMountUnrecoveredWriteErrors: number;
+    lastMountUnrecoveredWriteErrors: bigint | string | number;
 
     /**
      * Lifetime bytes read
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    lifetimeBytesRead: number;
+    lifetimeBytesRead: bigint | string | number;
 
     /**
      * Lifetime bytes written
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    lifetimeBytesWritten: number;
+    lifetimeBytesWritten: bigint | string | number;
 
     /**
      * Medium mount time
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    mediumMountTime: number;
+    mediumMountTime: bigint | string | number;
 
     /**
      * Medium ready time
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    mediumReadyTime: number;
+    mediumReadyTime: bigint | string | number;
 
     /**
      * Middle of medium passes
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    middleOfTapePasses: number;
+    middleOfTapePasses: bigint | string | number;
 
     /**
      * Volume serial number
@@ -116,77 +116,77 @@ export interface TapeDriveGetVolumeStatisticsResponseData {
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    totalNativeCapacity: number;
+    totalNativeCapacity: bigint | string | number;
 
     /**
      * Total used native capacity
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    totalUsedNativeCapacity: number;
+    totalUsedNativeCapacity: bigint | string | number;
 
     /**
      * Total datasets read
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeDatasetsRead: number;
+    volumeDatasetsRead: bigint | string | number;
 
     /**
      * Total data sets written
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeDatasetsWritten: number;
+    volumeDatasetsWritten: bigint | string | number;
 
     /**
      * Volume mounts (thread count)
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeMounts: number;
+    volumeMounts: bigint | string | number;
 
     /**
      * Total read retries
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeRecoveredReadErrors: number;
+    volumeRecoveredReadErrors: bigint | string | number;
 
     /**
      * Write retries
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeRecoveredWriteDataErrors: number;
+    volumeRecoveredWriteDataErrors: bigint | string | number;
 
     /**
      * Total unrecovered read errors
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeUnrecoveredReadErrors: number;
+    volumeUnrecoveredReadErrors: bigint | string | number;
 
     /**
      * Total unrecovered write errors
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeUnrecoveredWriteDataErrors: number;
+    volumeUnrecoveredWriteDataErrors: bigint | string | number;
 
     /**
      * Total fatal suspended writes
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeUnrecoveredWriteServoErrors: number;
+    volumeUnrecoveredWriteServoErrors: bigint | string | number;
 
     /**
      * Total suspended writes
      * @type {number}
      * @memberof TapeDriveGetVolumeStatisticsResponseData
      */
-    volumeWriteServoErrors: number;
+    volumeWriteServoErrors: bigint | string | number;
 
     /**
      * Volume is WORM
@@ -275,53 +275,53 @@ export function TapeDriveGetVolumeStatisticsResponseDataFromJSONTyped(json: any,
     return {
         
         
-        'beginningOfMediumPasses': json['beginning-of-medium-passes'],
+        'beginningOfMediumPasses': BigInt(json['beginning-of-medium-passes']),
         
-        'lastLoadReadCompressionRatio': json['last-load-read-compression-ratio'],
+        'lastLoadReadCompressionRatio': BigInt(json['last-load-read-compression-ratio']),
         
-        'lastLoadWriteCompressionRatio': json['last-load-write-compression-ratio'],
+        'lastLoadWriteCompressionRatio': BigInt(json['last-load-write-compression-ratio']),
         
-        'lastMountBytesRead': json['last-mount-bytes-read'],
+        'lastMountBytesRead': BigInt(json['last-mount-bytes-read']),
         
-        'lastMountBytesWritten': json['last-mount-bytes-written'],
+        'lastMountBytesWritten': BigInt(json['last-mount-bytes-written']),
         
-        'lastMountUnrecoveredReadErrors': json['last-mount-unrecovered-read-errors'],
+        'lastMountUnrecoveredReadErrors': BigInt(json['last-mount-unrecovered-read-errors']),
         
-        'lastMountUnrecoveredWriteErrors': json['last-mount-unrecovered-write-errors'],
+        'lastMountUnrecoveredWriteErrors': BigInt(json['last-mount-unrecovered-write-errors']),
         
-        'lifetimeBytesRead': json['lifetime-bytes-read'],
+        'lifetimeBytesRead': BigInt(json['lifetime-bytes-read']),
         
-        'lifetimeBytesWritten': json['lifetime-bytes-written'],
+        'lifetimeBytesWritten': BigInt(json['lifetime-bytes-written']),
         
-        'mediumMountTime': json['medium-mount-time'],
+        'mediumMountTime': BigInt(json['medium-mount-time']),
         
-        'mediumReadyTime': json['medium-ready-time'],
+        'mediumReadyTime': BigInt(json['medium-ready-time']),
         
-        'middleOfTapePasses': json['middle-of-tape-passes'],
+        'middleOfTapePasses': BigInt(json['middle-of-tape-passes']),
         
         'serial': json['serial'],
         
-        'totalNativeCapacity': json['total-native-capacity'],
+        'totalNativeCapacity': BigInt(json['total-native-capacity']),
         
-        'totalUsedNativeCapacity': json['total-used-native-capacity'],
+        'totalUsedNativeCapacity': BigInt(json['total-used-native-capacity']),
         
-        'volumeDatasetsRead': json['volume-datasets-read'],
+        'volumeDatasetsRead': BigInt(json['volume-datasets-read']),
         
-        'volumeDatasetsWritten': json['volume-datasets-written'],
+        'volumeDatasetsWritten': BigInt(json['volume-datasets-written']),
         
-        'volumeMounts': json['volume-mounts'],
+        'volumeMounts': BigInt(json['volume-mounts']),
         
-        'volumeRecoveredReadErrors': json['volume-recovered-read-errors'],
+        'volumeRecoveredReadErrors': BigInt(json['volume-recovered-read-errors']),
         
-        'volumeRecoveredWriteDataErrors': json['volume-recovered-write-data-errors'],
+        'volumeRecoveredWriteDataErrors': BigInt(json['volume-recovered-write-data-errors']),
         
-        'volumeUnrecoveredReadErrors': json['volume-unrecovered-read-errors'],
+        'volumeUnrecoveredReadErrors': BigInt(json['volume-unrecovered-read-errors']),
         
-        'volumeUnrecoveredWriteDataErrors': json['volume-unrecovered-write-data-errors'],
+        'volumeUnrecoveredWriteDataErrors': BigInt(json['volume-unrecovered-write-data-errors']),
         
-        'volumeUnrecoveredWriteServoErrors': json['volume-unrecovered-write-servo-errors'],
+        'volumeUnrecoveredWriteServoErrors': BigInt(json['volume-unrecovered-write-servo-errors']),
         
-        'volumeWriteServoErrors': json['volume-write-servo-errors'],
+        'volumeWriteServoErrors': BigInt(json['volume-write-servo-errors']),
         
         'worm': json['worm'],
         
@@ -342,53 +342,53 @@ export function TapeDriveGetVolumeStatisticsResponseDataToJSONTyped(value?: Tape
     return {
         
         
-        'beginning-of-medium-passes': value['beginningOfMediumPasses'],
+        'beginning-of-medium-passes': String(value['beginningOfMediumPasses']),
         
-        'last-load-read-compression-ratio': value['lastLoadReadCompressionRatio'],
+        'last-load-read-compression-ratio': String(value['lastLoadReadCompressionRatio']),
         
-        'last-load-write-compression-ratio': value['lastLoadWriteCompressionRatio'],
+        'last-load-write-compression-ratio': String(value['lastLoadWriteCompressionRatio']),
         
-        'last-mount-bytes-read': value['lastMountBytesRead'],
+        'last-mount-bytes-read': String(value['lastMountBytesRead']),
         
-        'last-mount-bytes-written': value['lastMountBytesWritten'],
+        'last-mount-bytes-written': String(value['lastMountBytesWritten']),
         
-        'last-mount-unrecovered-read-errors': value['lastMountUnrecoveredReadErrors'],
+        'last-mount-unrecovered-read-errors': String(value['lastMountUnrecoveredReadErrors']),
         
-        'last-mount-unrecovered-write-errors': value['lastMountUnrecoveredWriteErrors'],
+        'last-mount-unrecovered-write-errors': String(value['lastMountUnrecoveredWriteErrors']),
         
-        'lifetime-bytes-read': value['lifetimeBytesRead'],
+        'lifetime-bytes-read': String(value['lifetimeBytesRead']),
         
-        'lifetime-bytes-written': value['lifetimeBytesWritten'],
+        'lifetime-bytes-written': String(value['lifetimeBytesWritten']),
         
-        'medium-mount-time': value['mediumMountTime'],
+        'medium-mount-time': String(value['mediumMountTime']),
         
-        'medium-ready-time': value['mediumReadyTime'],
+        'medium-ready-time': String(value['mediumReadyTime']),
         
-        'middle-of-tape-passes': value['middleOfTapePasses'],
+        'middle-of-tape-passes': String(value['middleOfTapePasses']),
         
         'serial': value['serial'],
         
-        'total-native-capacity': value['totalNativeCapacity'],
+        'total-native-capacity': String(value['totalNativeCapacity']),
         
-        'total-used-native-capacity': value['totalUsedNativeCapacity'],
+        'total-used-native-capacity': String(value['totalUsedNativeCapacity']),
         
-        'volume-datasets-read': value['volumeDatasetsRead'],
+        'volume-datasets-read': String(value['volumeDatasetsRead']),
         
-        'volume-datasets-written': value['volumeDatasetsWritten'],
+        'volume-datasets-written': String(value['volumeDatasetsWritten']),
         
-        'volume-mounts': value['volumeMounts'],
+        'volume-mounts': String(value['volumeMounts']),
         
-        'volume-recovered-read-errors': value['volumeRecoveredReadErrors'],
+        'volume-recovered-read-errors': String(value['volumeRecoveredReadErrors']),
         
-        'volume-recovered-write-data-errors': value['volumeRecoveredWriteDataErrors'],
+        'volume-recovered-write-data-errors': String(value['volumeRecoveredWriteDataErrors']),
         
-        'volume-unrecovered-read-errors': value['volumeUnrecoveredReadErrors'],
+        'volume-unrecovered-read-errors': String(value['volumeUnrecoveredReadErrors']),
         
-        'volume-unrecovered-write-data-errors': value['volumeUnrecoveredWriteDataErrors'],
+        'volume-unrecovered-write-data-errors': String(value['volumeUnrecoveredWriteDataErrors']),
         
-        'volume-unrecovered-write-servo-errors': value['volumeUnrecoveredWriteServoErrors'],
+        'volume-unrecovered-write-servo-errors': String(value['volumeUnrecoveredWriteServoErrors']),
         
-        'volume-write-servo-errors': value['volumeWriteServoErrors'],
+        'volume-write-servo-errors': String(value['volumeWriteServoErrors']),
         
         'worm': value['worm'],
         

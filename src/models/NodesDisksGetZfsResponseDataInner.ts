@@ -25,7 +25,7 @@ export interface NodesDisksGetZfsResponseDataInner {
      * @type {number}
      * @memberof NodesDisksGetZfsResponseDataInner
      */
-    alloc: number;
+    alloc: bigint | string | number;
 
     /**
      * ZFS deduplication ratio
@@ -39,14 +39,14 @@ export interface NodesDisksGetZfsResponseDataInner {
      * @type {number}
      * @memberof NodesDisksGetZfsResponseDataInner
      */
-    frag: number;
+    frag: bigint | string | number;
 
     /**
      * Free space
      * @type {number}
      * @memberof NodesDisksGetZfsResponseDataInner
      */
-    free: number;
+    free: bigint | string | number;
 
     /**
      * Health
@@ -67,7 +67,7 @@ export interface NodesDisksGetZfsResponseDataInner {
      * @type {number}
      * @memberof NodesDisksGetZfsResponseDataInner
      */
-    size: number;
+    size: bigint | string | number;
 
 }
 
@@ -104,19 +104,19 @@ export function NodesDisksGetZfsResponseDataInnerFromJSONTyped(json: any, ignore
     return {
         
         
-        'alloc': json['alloc'],
+        'alloc': BigInt(json['alloc']),
         
         'dedup': json['dedup'],
         
-        'frag': json['frag'],
+        'frag': BigInt(json['frag']),
         
-        'free': json['free'],
+        'free': BigInt(json['free']),
         
         'health': json['health'],
         
         'name': json['name'],
         
-        'size': json['size'],
+        'size': BigInt(json['size']),
         
     };
 }
@@ -133,19 +133,19 @@ export function NodesDisksGetZfsResponseDataInnerToJSONTyped(value?: NodesDisksG
     return {
         
         
-        'alloc': value['alloc'],
+        'alloc': String(value['alloc']),
         
         'dedup': value['dedup'],
         
-        'frag': value['frag'],
+        'frag': String(value['frag']),
         
-        'free': value['free'],
+        'free': String(value['free']),
         
         'health': value['health'],
         
         'name': value['name'],
         
-        'size': value['size'],
+        'size': String(value['size']),
         
     };
 }

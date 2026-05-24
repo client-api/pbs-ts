@@ -40,7 +40,9 @@ export function PbsModeModeEnumFromJSON(json: any): PbsModeModeEnum {
 }
 
 export function PbsModeModeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsModeModeEnum {
+
     return json as PbsModeModeEnum;
+
 }
 
 export function PbsModeModeEnumToJSON(value?: PbsModeModeEnum | null): any {

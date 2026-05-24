@@ -25,7 +25,7 @@ export interface NodesCreateTermproxyResponseData {
      * @type {number}
      * @memberof NodesCreateTermproxyResponseData
      */
-    port: number;
+    port: bigint | string | number;
 
     /**
      * ticket used to verifiy websocket connection
@@ -77,7 +77,7 @@ export function NodesCreateTermproxyResponseDataFromJSONTyped(json: any, ignoreD
     return {
         
         
-        'port': json['port'],
+        'port': BigInt(json['port']),
         
         'ticket': json['ticket'],
         
@@ -100,7 +100,7 @@ export function NodesCreateTermproxyResponseDataToJSONTyped(value?: NodesCreateT
     return {
         
         
-        'port': value['port'],
+        'port': String(value['port']),
         
         'ticket': value['ticket'],
         

@@ -46,7 +46,7 @@ export interface AccessUsersCreateUsersRequest {
      * @type {number}
      * @memberof AccessUsersCreateUsersRequest
      */
-    expire?: number;
+    expire?: bigint | string | number;
 
     /**
      * First name.
@@ -112,7 +112,7 @@ export function AccessUsersCreateUsersRequestFromJSONTyped(json: any, ignoreDisc
         
         'enable': json['enable'] == null ? undefined : json['enable'],
         
-        'expire': json['expire'] == null ? undefined : json['expire'],
+        'expire': json['expire'] == null ? undefined : BigInt(json['expire']),
         
         'firstname': json['firstname'] == null ? undefined : json['firstname'],
         
@@ -143,7 +143,7 @@ export function AccessUsersCreateUsersRequestToJSONTyped(value?: AccessUsersCrea
         
         'enable': value['enable'],
         
-        'expire': value['expire'],
+        'expire': value['expire'] == null ? undefined : String(value['expire']),
         
         'firstname': value['firstname'],
         

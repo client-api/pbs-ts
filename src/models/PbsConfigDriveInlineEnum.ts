@@ -40,7 +40,9 @@ export function PbsConfigDriveInlineEnumFromJSON(json: any): PbsConfigDriveInlin
 }
 
 export function PbsConfigDriveInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigDriveInlineEnum {
+
     return json as PbsConfigDriveInlineEnum;
+
 }
 
 export function PbsConfigDriveInlineEnumToJSON(value?: PbsConfigDriveInlineEnum | null): any {

@@ -68,7 +68,7 @@ export interface ConfigMetricsUpdateInfluxdbHttpRequest {
      * @type {number}
      * @memberof ConfigMetricsUpdateInfluxdbHttpRequest
      */
-    maxBodySize?: number;
+    maxBodySize?: bigint | string | number;
 
     /**
      * InfluxDB Organization.
@@ -139,7 +139,7 @@ export function ConfigMetricsUpdateInfluxdbHttpRequestFromJSONTyped(json: any, i
         
         'enable': json['enable'] == null ? undefined : json['enable'],
         
-        'maxBodySize': json['max-body-size'] == null ? undefined : json['max-body-size'],
+        'maxBodySize': json['max-body-size'] == null ? undefined : BigInt(json['max-body-size']),
         
         'organization': json['organization'] == null ? undefined : json['organization'],
         
@@ -174,7 +174,7 @@ export function ConfigMetricsUpdateInfluxdbHttpRequestToJSONTyped(value?: Config
         
         'enable': value['enable'],
         
-        'max-body-size': value['maxBodySize'],
+        'max-body-size': value['maxBodySize'] == null ? undefined : String(value['maxBodySize']),
         
         'organization': value['organization'],
         

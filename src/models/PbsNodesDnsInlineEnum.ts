@@ -41,7 +41,9 @@ export function PbsNodesDnsInlineEnumFromJSON(json: any): PbsNodesDnsInlineEnum 
 }
 
 export function PbsNodesDnsInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesDnsInlineEnum {
+
     return json as PbsNodesDnsInlineEnum;
+
 }
 
 export function PbsNodesDnsInlineEnumToJSON(value?: PbsNodesDnsInlineEnum | null): any {

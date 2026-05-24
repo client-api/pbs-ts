@@ -41,7 +41,9 @@ export function PbsAdminDatastoreCryptModeEnumFromJSON(json: any): PbsAdminDatas
 }
 
 export function PbsAdminDatastoreCryptModeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsAdminDatastoreCryptModeEnum {
+
     return json as PbsAdminDatastoreCryptModeEnum;
+
 }
 
 export function PbsAdminDatastoreCryptModeEnumToJSON(value?: PbsAdminDatastoreCryptModeEnum | null): any {

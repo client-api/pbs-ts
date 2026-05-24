@@ -40,7 +40,9 @@ export function PbsNodesAptInlineEnumFromJSON(json: any): PbsNodesAptInlineEnum 
 }
 
 export function PbsNodesAptInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesAptInlineEnum {
+
     return json as PbsNodesAptInlineEnum;
+
 }
 
 export function PbsNodesAptInlineEnumToJSON(value?: PbsNodesAptInlineEnum | null): any {

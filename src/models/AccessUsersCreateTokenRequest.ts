@@ -46,7 +46,7 @@ export interface AccessUsersCreateTokenRequest {
      * @type {number}
      * @memberof AccessUsersCreateTokenRequest
      */
-    expire?: number;
+    expire?: bigint | string | number;
 
 }
 
@@ -79,7 +79,7 @@ export function AccessUsersCreateTokenRequestFromJSONTyped(json: any, ignoreDisc
         
         'enable': json['enable'] == null ? undefined : json['enable'],
         
-        'expire': json['expire'] == null ? undefined : json['expire'],
+        'expire': json['expire'] == null ? undefined : BigInt(json['expire']),
         
     };
 }
@@ -102,7 +102,7 @@ export function AccessUsersCreateTokenRequestToJSONTyped(value?: AccessUsersCrea
         
         'enable': value['enable'],
         
-        'expire': value['expire'],
+        'expire': value['expire'] == null ? undefined : String(value['expire']),
         
     };
 }

@@ -40,7 +40,9 @@ export function PbsConfigAccessInlineEnum2FromJSON(json: any): PbsConfigAccessIn
 }
 
 export function PbsConfigAccessInlineEnum2FromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigAccessInlineEnum2 {
+
     return json as PbsConfigAccessInlineEnum2;
+
 }
 
 export function PbsConfigAccessInlineEnum2ToJSON(value?: PbsConfigAccessInlineEnum2 | null): any {

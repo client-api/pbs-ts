@@ -25,21 +25,21 @@ export interface NodesStatusGetStatusResponseDataSwap {
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataSwap
      */
-    free: number;
+    free: bigint | string | number;
 
     /**
      * Total swap
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataSwap
      */
-    total: number;
+    total: bigint | string | number;
 
     /**
      * Used swap
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataSwap
      */
-    used: number;
+    used: bigint | string | number;
 
 }
 
@@ -68,11 +68,11 @@ export function NodesStatusGetStatusResponseDataSwapFromJSONTyped(json: any, ign
     return {
         
         
-        'free': json['free'],
+        'free': BigInt(json['free']),
         
-        'total': json['total'],
+        'total': BigInt(json['total']),
         
-        'used': json['used'],
+        'used': BigInt(json['used']),
         
     };
 }
@@ -89,11 +89,11 @@ export function NodesStatusGetStatusResponseDataSwapToJSONTyped(value?: NodesSta
     return {
         
         
-        'free': value['free'],
+        'free': String(value['free']),
         
-        'total': value['total'],
+        'total': String(value['total']),
         
-        'used': value['used'],
+        'used': String(value['used']),
         
     };
 }

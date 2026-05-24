@@ -46,14 +46,14 @@ export interface NodesCertificatesCreateCustomResponseDataInner {
      * @type {number}
      * @memberof NodesCertificatesCreateCustomResponseDataInner
      */
-    notafter?: number;
+    notafter?: bigint | string | number;
 
     /**
      * Certificate's notBefore timestamp (UNIX epoch).
      * @type {number}
      * @memberof NodesCertificatesCreateCustomResponseDataInner
      */
-    notbefore?: number;
+    notbefore?: bigint | string | number;
 
     /**
      * Certificate in PEM format.
@@ -132,9 +132,9 @@ export function NodesCertificatesCreateCustomResponseDataInnerFromJSONTyped(json
         
         'issuer': json['issuer'],
         
-        'notafter': json['notafter'] == null ? undefined : json['notafter'],
+        'notafter': json['notafter'] == null ? undefined : BigInt(json['notafter']),
         
-        'notbefore': json['notbefore'] == null ? undefined : json['notbefore'],
+        'notbefore': json['notbefore'] == null ? undefined : BigInt(json['notbefore']),
         
         'pem': json['pem'] == null ? undefined : json['pem'],
         
@@ -167,9 +167,9 @@ export function NodesCertificatesCreateCustomResponseDataInnerToJSONTyped(value?
         
         'issuer': value['issuer'],
         
-        'notafter': value['notafter'],
+        'notafter': value['notafter'] == null ? undefined : String(value['notafter']),
         
-        'notbefore': value['notbefore'],
+        'notbefore': value['notbefore'] == null ? undefined : String(value['notbefore']),
         
         'pem': value['pem'],
         

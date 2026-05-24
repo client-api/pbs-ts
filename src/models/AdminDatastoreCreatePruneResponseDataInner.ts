@@ -40,7 +40,7 @@ export interface AdminDatastoreCreatePruneResponseDataInner {
      * @type {number}
      * @memberof AdminDatastoreCreatePruneResponseDataInner
      */
-    backupTime: number;
+    backupTime: bigint | string | number;
 
     /**
      * Backup types.
@@ -89,7 +89,7 @@ export function AdminDatastoreCreatePruneResponseDataInnerFromJSONTyped(json: an
         
         'backupId': json['backup-id'],
         
-        'backupTime': json['backup-time'],
+        'backupTime': BigInt(json['backup-time']),
         
         'backupType': PbsBackupTypeEnumFromJSON(json['backup-type']),
         
@@ -112,7 +112,7 @@ export function AdminDatastoreCreatePruneResponseDataInnerToJSONTyped(value?: Ad
         
         'backup-id': value['backupId'],
         
-        'backup-time': value['backupTime'],
+        'backup-time': String(value['backupTime']),
         
         'backup-type': PbsBackupTypeEnumToJSON(value['backupType']),
         

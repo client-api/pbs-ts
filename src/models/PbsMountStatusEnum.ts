@@ -41,7 +41,9 @@ export function PbsMountStatusEnumFromJSON(json: any): PbsMountStatusEnum {
 }
 
 export function PbsMountStatusEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsMountStatusEnum {
+
     return json as PbsMountStatusEnum;
+
 }
 
 export function PbsMountStatusEnumToJSON(value?: PbsMountStatusEnum | null): any {

@@ -41,7 +41,9 @@ export function PbsBondXmitHashPolicyEnumFromJSON(json: any): PbsBondXmitHashPol
 }
 
 export function PbsBondXmitHashPolicyEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsBondXmitHashPolicyEnum {
+
     return json as PbsBondXmitHashPolicyEnum;
+
 }
 
 export function PbsBondXmitHashPolicyEnumToJSON(value?: PbsBondXmitHashPolicyEnum | null): any {

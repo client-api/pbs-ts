@@ -60,7 +60,7 @@ export interface ConfigVerifyCreateVerifyRequest {
      * @type {number}
      * @memberof ConfigVerifyCreateVerifyRequest
      */
-    outdatedAfter?: number;
+    outdatedAfter?: bigint | string | number;
 
     /**
      * The number of threads to use for reading chunks in verify job.
@@ -133,7 +133,7 @@ export function ConfigVerifyCreateVerifyRequestFromJSONTyped(json: any, ignoreDi
         
         'ns': json['ns'] == null ? undefined : json['ns'],
         
-        'outdatedAfter': json['outdated-after'] == null ? undefined : json['outdated-after'],
+        'outdatedAfter': json['outdated-after'] == null ? undefined : BigInt(json['outdated-after']),
         
         'readThreads': json['read-threads'] == null ? undefined : json['read-threads'],
         
@@ -168,7 +168,7 @@ export function ConfigVerifyCreateVerifyRequestToJSONTyped(value?: ConfigVerifyC
         
         'ns': value['ns'],
         
-        'outdated-after': value['outdatedAfter'],
+        'outdated-after': value['outdatedAfter'] == null ? undefined : String(value['outdatedAfter']),
         
         'read-threads': value['readThreads'],
         

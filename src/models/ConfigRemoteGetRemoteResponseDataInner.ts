@@ -60,7 +60,7 @@ export interface ConfigRemoteGetRemoteResponseDataInner {
      * @type {number}
      * @memberof ConfigRemoteGetRemoteResponseDataInner
      */
-    port?: number;
+    port?: bigint | string | number;
 
     /**
      * Use the http proxy configuration of the node for remote connections.
@@ -110,7 +110,7 @@ export function ConfigRemoteGetRemoteResponseDataInnerFromJSONTyped(json: any, i
         
         'name': json['name'],
         
-        'port': json['port'] == null ? undefined : json['port'],
+        'port': json['port'] == null ? undefined : BigInt(json['port']),
         
         'useNodeProxy': json['use-node-proxy'] == null ? undefined : json['use-node-proxy'],
         
@@ -139,7 +139,7 @@ export function ConfigRemoteGetRemoteResponseDataInnerToJSONTyped(value?: Config
         
         'name': value['name'],
         
-        'port': value['port'],
+        'port': value['port'] == null ? undefined : String(value['port']),
         
         'use-node-proxy': value['useNodeProxy'],
         

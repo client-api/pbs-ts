@@ -1,8 +1,5 @@
-.gitignore
 .npmignore
-.openapi-generator-ignore
 README.md
-package.json
 src/apis/AccessAclApi.ts
 src/apis/AccessApi.ts
 src/apis/AccessDomainsApi.ts
@@ -782,4 +779,3 @@ src/models/VersionGetVersionResponseData.ts
 src/models/index.ts
 src/runtime.ts
 tsconfig.esm.json
-tsconfig.json

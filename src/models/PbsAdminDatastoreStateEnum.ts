@@ -40,7 +40,9 @@ export function PbsAdminDatastoreStateEnumFromJSON(json: any): PbsAdminDatastore
 }
 
 export function PbsAdminDatastoreStateEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsAdminDatastoreStateEnum {
+
     return json as PbsAdminDatastoreStateEnum;
+
 }
 
 export function PbsAdminDatastoreStateEnumToJSON(value?: PbsAdminDatastoreStateEnum | null): any {

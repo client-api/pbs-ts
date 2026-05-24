@@ -82,7 +82,7 @@ export interface ConfigS3CreateS3Request {
      * @type {number}
      * @memberof ConfigS3CreateS3Request
      */
-    port?: number;
+    port?: bigint | string | number;
 
     /**
      * List of provider specific feature implementation quirks.
@@ -96,7 +96,7 @@ export interface ConfigS3CreateS3Request {
      * @type {number}
      * @memberof ConfigS3CreateS3Request
      */
-    putRateLimit?: number;
+    putRateLimit?: bigint | string | number;
 
     /**
      * Byte size with optional unit (B, KB (base 10), MB, GB, ..., KiB (base 2), MiB, Gib, ...).
@@ -179,11 +179,11 @@ export function ConfigS3CreateS3RequestFromJSONTyped(json: any, ignoreDiscrimina
         
         'pathStyle': json['path-style'] == null ? undefined : json['path-style'],
         
-        'port': json['port'] == null ? undefined : json['port'],
+        'port': json['port'] == null ? undefined : BigInt(json['port']),
         
         'providerQuirks': json['provider-quirks'] == null ? undefined : ((json['provider-quirks'] as Array<any>).map(PbsProviderQuirksEnumFromJSON)),
         
-        'putRateLimit': json['put-rate-limit'] == null ? undefined : json['put-rate-limit'],
+        'putRateLimit': json['put-rate-limit'] == null ? undefined : BigInt(json['put-rate-limit']),
         
         'rateIn': json['rate-in'] == null ? undefined : json['rate-in'],
         
@@ -222,11 +222,11 @@ export function ConfigS3CreateS3RequestToJSONTyped(value?: ConfigS3CreateS3Reque
         
         'path-style': value['pathStyle'],
         
-        'port': value['port'],
+        'port': value['port'] == null ? undefined : String(value['port']),
         
         'provider-quirks': value['providerQuirks'] == null ? undefined : ((value['providerQuirks'] as Array<any>).map(PbsProviderQuirksEnumToJSON)),
         
-        'put-rate-limit': value['putRateLimit'],
+        'put-rate-limit': value['putRateLimit'] == null ? undefined : String(value['putRateLimit']),
         
         'rate-in': value['rateIn'],
         

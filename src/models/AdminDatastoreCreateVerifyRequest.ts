@@ -40,7 +40,7 @@ export interface AdminDatastoreCreateVerifyRequest {
      * @type {number}
      * @memberof AdminDatastoreCreateVerifyRequest
      */
-    backupTime?: number;
+    backupTime?: bigint | string | number;
 
     /**
      * Backup types.
@@ -75,7 +75,7 @@ export interface AdminDatastoreCreateVerifyRequest {
      * @type {number}
      * @memberof AdminDatastoreCreateVerifyRequest
      */
-    outdatedAfter?: number;
+    outdatedAfter?: bigint | string | number;
 
     /**
      * The number of threads to use for reading chunks in verify job.
@@ -125,7 +125,7 @@ export function AdminDatastoreCreateVerifyRequestFromJSONTyped(json: any, ignore
         
         'backupId': json['backup-id'] == null ? undefined : json['backup-id'],
         
-        'backupTime': json['backup-time'] == null ? undefined : json['backup-time'],
+        'backupTime': json['backup-time'] == null ? undefined : BigInt(json['backup-time']),
         
         'backupType': json['backup-type'] == null ? undefined : PbsBackupTypeEnumFromJSON(json['backup-type']),
         
@@ -135,7 +135,7 @@ export function AdminDatastoreCreateVerifyRequestFromJSONTyped(json: any, ignore
         
         'ns': json['ns'] == null ? undefined : json['ns'],
         
-        'outdatedAfter': json['outdated-after'] == null ? undefined : json['outdated-after'],
+        'outdatedAfter': json['outdated-after'] == null ? undefined : BigInt(json['outdated-after']),
         
         'readThreads': json['read-threads'] == null ? undefined : json['read-threads'],
         
@@ -158,7 +158,7 @@ export function AdminDatastoreCreateVerifyRequestToJSONTyped(value?: AdminDatast
         
         'backup-id': value['backupId'],
         
-        'backup-time': value['backupTime'],
+        'backup-time': value['backupTime'] == null ? undefined : String(value['backupTime']),
         
         'backup-type': PbsBackupTypeEnumToJSON(value['backupType']),
         
@@ -168,7 +168,7 @@ export function AdminDatastoreCreateVerifyRequestToJSONTyped(value?: AdminDatast
         
         'ns': value['ns'],
         
-        'outdated-after': value['outdatedAfter'],
+        'outdated-after': value['outdatedAfter'] == null ? undefined : String(value['outdatedAfter']),
         
         'read-threads': value['readThreads'],
         

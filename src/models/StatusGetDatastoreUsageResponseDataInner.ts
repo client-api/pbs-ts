@@ -47,7 +47,7 @@ export interface StatusGetDatastoreUsageResponseDataInner {
      * @type {number}
      * @memberof StatusGetDatastoreUsageResponseDataInner
      */
-    avail?: number;
+    avail?: bigint | string | number;
 
     /**
      * Datastore backend type
@@ -71,7 +71,7 @@ export interface StatusGetDatastoreUsageResponseDataInner {
      * @type {number}
      * @memberof StatusGetDatastoreUsageResponseDataInner
      */
-    estimatedFullDate?: number;
+    estimatedFullDate?: bigint | string | number;
 
     /**
      * 
@@ -92,14 +92,14 @@ export interface StatusGetDatastoreUsageResponseDataInner {
      * @type {number}
      * @memberof StatusGetDatastoreUsageResponseDataInner
      */
-    historyDelta?: number;
+    historyDelta?: bigint | string | number;
 
     /**
      * History start time (epoch)
      * @type {number}
      * @memberof StatusGetDatastoreUsageResponseDataInner
      */
-    historyStart?: number;
+    historyStart?: bigint | string | number;
 
     /**
      * Current mounting status of a datastore, useful for removable datastores.
@@ -120,14 +120,14 @@ export interface StatusGetDatastoreUsageResponseDataInner {
      * @type {number}
      * @memberof StatusGetDatastoreUsageResponseDataInner
      */
-    total?: number;
+    total?: bigint | string | number;
 
     /**
      * The used bytes of the underlying storage.
      * @type {number}
      * @memberof StatusGetDatastoreUsageResponseDataInner
      */
-    used?: number;
+    used?: bigint | string | number;
 
 }
 
@@ -167,29 +167,29 @@ export function StatusGetDatastoreUsageResponseDataInnerFromJSONTyped(json: any,
     return {
         
         
-        'avail': json['avail'] == null ? undefined : json['avail'],
+        'avail': json['avail'] == null ? undefined : BigInt(json['avail']),
         
         'backendType': PbsBackendTypeEnumFromJSON(json['backend-type']),
         
         'error': json['error'] == null ? undefined : json['error'],
         
-        'estimatedFullDate': json['estimated-full-date'] == null ? undefined : json['estimated-full-date'],
+        'estimatedFullDate': json['estimated-full-date'] == null ? undefined : BigInt(json['estimated-full-date']),
         
         'gcStatus': json['gc-status'] == null ? undefined : AdminDatastoreGetStatusResponseDataGcStatusFromJSON(json['gc-status']),
         
         'history': json['history'] == null ? undefined : json['history'],
         
-        'historyDelta': json['history-delta'] == null ? undefined : json['history-delta'],
+        'historyDelta': json['history-delta'] == null ? undefined : BigInt(json['history-delta']),
         
-        'historyStart': json['history-start'] == null ? undefined : json['history-start'],
+        'historyStart': json['history-start'] == null ? undefined : BigInt(json['history-start']),
         
         'mountStatus': PbsMountStatusEnumFromJSON(json['mount-status']),
         
         'store': json['store'],
         
-        'total': json['total'] == null ? undefined : json['total'],
+        'total': json['total'] == null ? undefined : BigInt(json['total']),
         
-        'used': json['used'] == null ? undefined : json['used'],
+        'used': json['used'] == null ? undefined : BigInt(json['used']),
         
     };
 }
@@ -206,29 +206,29 @@ export function StatusGetDatastoreUsageResponseDataInnerToJSONTyped(value?: Stat
     return {
         
         
-        'avail': value['avail'],
+        'avail': value['avail'] == null ? undefined : String(value['avail']),
         
         'backend-type': PbsBackendTypeEnumToJSON(value['backendType']),
         
         'error': value['error'],
         
-        'estimated-full-date': value['estimatedFullDate'],
+        'estimated-full-date': value['estimatedFullDate'] == null ? undefined : String(value['estimatedFullDate']),
         
         'gc-status': AdminDatastoreGetStatusResponseDataGcStatusToJSON(value['gcStatus']),
         
         'history': value['history'],
         
-        'history-delta': value['historyDelta'],
+        'history-delta': value['historyDelta'] == null ? undefined : String(value['historyDelta']),
         
-        'history-start': value['historyStart'],
+        'history-start': value['historyStart'] == null ? undefined : String(value['historyStart']),
         
         'mount-status': PbsMountStatusEnumToJSON(value['mountStatus']),
         
         'store': value['store'],
         
-        'total': value['total'],
+        'total': value['total'] == null ? undefined : String(value['total']),
         
-        'used': value['used'],
+        'used': value['used'] == null ? undefined : String(value['used']),
         
     };
 }

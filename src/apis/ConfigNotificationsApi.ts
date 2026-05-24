@@ -1757,7 +1757,12 @@ export class ConfigNotificationsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        headerParameters['Content-Type'] = 'application/json';
+        // Optional body: only emit Content-Type when the body is actually provided.
+        // PVE/PMG Perl HTTP server rejects empty bodies with Content-Type: application/json
+        // ("malformed JSON string"), and other Proxmox products are equally fussy.
+        if (requestParameters['configNotificationsUpdateGotifyRequest'] != null) {
+            headerParameters['Content-Type'] = 'application/json';
+        }
 
         if (this.configuration && this.configuration.apiKey) {
             headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // PBSApiToken authentication
@@ -1815,7 +1820,12 @@ export class ConfigNotificationsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        headerParameters['Content-Type'] = 'application/json';
+        // Optional body: only emit Content-Type when the body is actually provided.
+        // PVE/PMG Perl HTTP server rejects empty bodies with Content-Type: application/json
+        // ("malformed JSON string"), and other Proxmox products are equally fussy.
+        if (requestParameters['configNotificationsUpdateMatchersRequest'] != null) {
+            headerParameters['Content-Type'] = 'application/json';
+        }
 
         if (this.configuration && this.configuration.apiKey) {
             headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // PBSApiToken authentication
@@ -1873,7 +1883,12 @@ export class ConfigNotificationsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        headerParameters['Content-Type'] = 'application/json';
+        // Optional body: only emit Content-Type when the body is actually provided.
+        // PVE/PMG Perl HTTP server rejects empty bodies with Content-Type: application/json
+        // ("malformed JSON string"), and other Proxmox products are equally fussy.
+        if (requestParameters['configNotificationsUpdateSendmailRequest'] != null) {
+            headerParameters['Content-Type'] = 'application/json';
+        }
 
         if (this.configuration && this.configuration.apiKey) {
             headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // PBSApiToken authentication
@@ -1931,7 +1946,12 @@ export class ConfigNotificationsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        headerParameters['Content-Type'] = 'application/json';
+        // Optional body: only emit Content-Type when the body is actually provided.
+        // PVE/PMG Perl HTTP server rejects empty bodies with Content-Type: application/json
+        // ("malformed JSON string"), and other Proxmox products are equally fussy.
+        if (requestParameters['configNotificationsUpdateSmtpRequest'] != null) {
+            headerParameters['Content-Type'] = 'application/json';
+        }
 
         if (this.configuration && this.configuration.apiKey) {
             headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // PBSApiToken authentication
@@ -1989,7 +2009,12 @@ export class ConfigNotificationsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        headerParameters['Content-Type'] = 'application/json';
+        // Optional body: only emit Content-Type when the body is actually provided.
+        // PVE/PMG Perl HTTP server rejects empty bodies with Content-Type: application/json
+        // ("malformed JSON string"), and other Proxmox products are equally fussy.
+        if (requestParameters['configNotificationsUpdateWebhookRequest'] != null) {
+            headerParameters['Content-Type'] = 'application/json';
+        }
 
         if (this.configuration && this.configuration.apiKey) {
             headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // PBSApiToken authentication

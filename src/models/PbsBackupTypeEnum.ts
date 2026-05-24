@@ -41,7 +41,9 @@ export function PbsBackupTypeEnumFromJSON(json: any): PbsBackupTypeEnum {
 }
 
 export function PbsBackupTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsBackupTypeEnum {
+
     return json as PbsBackupTypeEnum;
+
 }
 
 export function PbsBackupTypeEnumToJSON(value?: PbsBackupTypeEnum | null): any {

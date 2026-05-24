@@ -43,7 +43,9 @@ export function PbsTypeEnumFromJSON(json: any): PbsTypeEnum {
 }
 
 export function PbsTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsTypeEnum {
+
     return json as PbsTypeEnum;
+
 }
 
 export function PbsTypeEnumToJSON(value?: PbsTypeEnum | null): any {

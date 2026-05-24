@@ -53,7 +53,9 @@ export function PbsNodesNetworkInlineEnumFromJSON(json: any): PbsNodesNetworkInl
 }
 
 export function PbsNodesNetworkInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesNetworkInlineEnum {
+
     return json as PbsNodesNetworkInlineEnum;
+
 }
 
 export function PbsNodesNetworkInlineEnumToJSON(value?: PbsNodesNetworkInlineEnum | null): any {

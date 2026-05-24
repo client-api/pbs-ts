@@ -32,42 +32,42 @@ export interface AdminDatastoreCreatePruneDatastoreRequest {
      * @type {number}
      * @memberof AdminDatastoreCreatePruneDatastoreRequest
      */
-    keepDaily?: number;
+    keepDaily?: bigint | string | number;
 
     /**
      * Number of hourly backups to keep.
      * @type {number}
      * @memberof AdminDatastoreCreatePruneDatastoreRequest
      */
-    keepHourly?: number;
+    keepHourly?: bigint | string | number;
 
     /**
      * Number of backups to keep.
      * @type {number}
      * @memberof AdminDatastoreCreatePruneDatastoreRequest
      */
-    keepLast?: number;
+    keepLast?: bigint | string | number;
 
     /**
      * Number of monthly backups to keep.
      * @type {number}
      * @memberof AdminDatastoreCreatePruneDatastoreRequest
      */
-    keepMonthly?: number;
+    keepMonthly?: bigint | string | number;
 
     /**
      * Number of weekly backups to keep.
      * @type {number}
      * @memberof AdminDatastoreCreatePruneDatastoreRequest
      */
-    keepWeekly?: number;
+    keepWeekly?: bigint | string | number;
 
     /**
      * Number of yearly backups to keep.
      * @type {number}
      * @memberof AdminDatastoreCreatePruneDatastoreRequest
      */
-    keepYearly?: number;
+    keepYearly?: bigint | string | number;
 
     /**
      * How many levels of namespaces should be operated on (0 == no recursion, empty == automatic full recursion, namespace depths reduce maximum allowed value)
@@ -115,17 +115,17 @@ export function AdminDatastoreCreatePruneDatastoreRequestFromJSONTyped(json: any
         
         'dryRun': json['dry-run'] == null ? undefined : json['dry-run'],
         
-        'keepDaily': json['keep-daily'] == null ? undefined : json['keep-daily'],
+        'keepDaily': json['keep-daily'] == null ? undefined : BigInt(json['keep-daily']),
         
-        'keepHourly': json['keep-hourly'] == null ? undefined : json['keep-hourly'],
+        'keepHourly': json['keep-hourly'] == null ? undefined : BigInt(json['keep-hourly']),
         
-        'keepLast': json['keep-last'] == null ? undefined : json['keep-last'],
+        'keepLast': json['keep-last'] == null ? undefined : BigInt(json['keep-last']),
         
-        'keepMonthly': json['keep-monthly'] == null ? undefined : json['keep-monthly'],
+        'keepMonthly': json['keep-monthly'] == null ? undefined : BigInt(json['keep-monthly']),
         
-        'keepWeekly': json['keep-weekly'] == null ? undefined : json['keep-weekly'],
+        'keepWeekly': json['keep-weekly'] == null ? undefined : BigInt(json['keep-weekly']),
         
-        'keepYearly': json['keep-yearly'] == null ? undefined : json['keep-yearly'],
+        'keepYearly': json['keep-yearly'] == null ? undefined : BigInt(json['keep-yearly']),
         
         'maxDepth': json['max-depth'] == null ? undefined : json['max-depth'],
         
@@ -148,17 +148,17 @@ export function AdminDatastoreCreatePruneDatastoreRequestToJSONTyped(value?: Adm
         
         'dry-run': value['dryRun'],
         
-        'keep-daily': value['keepDaily'],
+        'keep-daily': value['keepDaily'] == null ? undefined : String(value['keepDaily']),
         
-        'keep-hourly': value['keepHourly'],
+        'keep-hourly': value['keepHourly'] == null ? undefined : String(value['keepHourly']),
         
-        'keep-last': value['keepLast'],
+        'keep-last': value['keepLast'] == null ? undefined : String(value['keepLast']),
         
-        'keep-monthly': value['keepMonthly'],
+        'keep-monthly': value['keepMonthly'] == null ? undefined : String(value['keepMonthly']),
         
-        'keep-weekly': value['keepWeekly'],
+        'keep-weekly': value['keepWeekly'] == null ? undefined : String(value['keepWeekly']),
         
-        'keep-yearly': value['keepYearly'],
+        'keep-yearly': value['keepYearly'] == null ? undefined : String(value['keepYearly']),
         
         'max-depth': value['maxDepth'],
         

@@ -41,7 +41,9 @@ export function PbsTapeChangerEntryKindEnumFromJSON(json: any): PbsTapeChangerEn
 }
 
 export function PbsTapeChangerEntryKindEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsTapeChangerEntryKindEnum {
+
     return json as PbsTapeChangerEntryKindEnum;
+
 }
 
 export function PbsTapeChangerEntryKindEnumToJSON(value?: PbsTapeChangerEntryKindEnum | null): any {

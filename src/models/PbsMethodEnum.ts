@@ -41,7 +41,9 @@ export function PbsMethodEnumFromJSON(json: any): PbsMethodEnum {
 }
 
 export function PbsMethodEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsMethodEnum {
+
     return json as PbsMethodEnum;
+
 }
 
 export function PbsMethodEnumToJSON(value?: PbsMethodEnum | null): any {

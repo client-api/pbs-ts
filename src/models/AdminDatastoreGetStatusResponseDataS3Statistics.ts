@@ -25,49 +25,49 @@ export interface AdminDatastoreGetStatusResponseDataS3Statistics {
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataS3Statistics
      */
-    _delete: number;
+    _delete: bigint | string | number;
 
     /**
      * Total downloaded (bytes).
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataS3Statistics
      */
-    downloaded: number;
+    downloaded: bigint | string | number;
 
     /**
      * Get requests
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataS3Statistics
      */
-    get: number;
+    get: bigint | string | number;
 
     /**
      * Head requests
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataS3Statistics
      */
-    head: number;
+    head: bigint | string | number;
 
     /**
      * Post requests
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataS3Statistics
      */
-    post: number;
+    post: bigint | string | number;
 
     /**
      * Put requests
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataS3Statistics
      */
-    put: number;
+    put: bigint | string | number;
 
     /**
      * Total uploaded (bytes).
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataS3Statistics
      */
-    uploaded: number;
+    uploaded: bigint | string | number;
 
 }
 
@@ -104,19 +104,19 @@ export function AdminDatastoreGetStatusResponseDataS3StatisticsFromJSONTyped(jso
     return {
         
         
-        '_delete': json['delete'],
+        '_delete': BigInt(json['delete']),
         
-        'downloaded': json['downloaded'],
+        'downloaded': BigInt(json['downloaded']),
         
-        'get': json['get'],
+        'get': BigInt(json['get']),
         
-        'head': json['head'],
+        'head': BigInt(json['head']),
         
-        'post': json['post'],
+        'post': BigInt(json['post']),
         
-        'put': json['put'],
+        'put': BigInt(json['put']),
         
-        'uploaded': json['uploaded'],
+        'uploaded': BigInt(json['uploaded']),
         
     };
 }
@@ -133,19 +133,19 @@ export function AdminDatastoreGetStatusResponseDataS3StatisticsToJSONTyped(value
     return {
         
         
-        'delete': value['_delete'],
+        'delete': String(value['_delete']),
         
-        'downloaded': value['downloaded'],
+        'downloaded': String(value['downloaded']),
         
-        'get': value['get'],
+        'get': String(value['get']),
         
-        'head': value['head'],
+        'head': String(value['head']),
         
-        'post': value['post'],
+        'post': String(value['post']),
         
-        'put': value['put'],
+        'put': String(value['put']),
         
-        'uploaded': value['uploaded'],
+        'uploaded': String(value['uploaded']),
         
     };
 }

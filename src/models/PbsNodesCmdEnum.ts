@@ -40,7 +40,9 @@ export function PbsNodesCmdEnumFromJSON(json: any): PbsNodesCmdEnum {
 }
 
 export function PbsNodesCmdEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesCmdEnum {
+
     return json as PbsNodesCmdEnum;
+
 }
 
 export function PbsNodesCmdEnumToJSON(value?: PbsNodesCmdEnum | null): any {

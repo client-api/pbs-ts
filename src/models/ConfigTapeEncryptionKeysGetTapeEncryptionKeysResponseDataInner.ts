@@ -33,7 +33,7 @@ export interface ConfigTapeEncryptionKeysGetTapeEncryptionKeysResponseDataInner 
      * @type {number}
      * @memberof ConfigTapeEncryptionKeysGetTapeEncryptionKeysResponseDataInner
      */
-    created: number;
+    created: bigint | string | number;
 
     /**
      * X509 certificate fingerprint (sha256).
@@ -61,7 +61,7 @@ export interface ConfigTapeEncryptionKeysGetTapeEncryptionKeysResponseDataInner 
      * @type {number}
      * @memberof ConfigTapeEncryptionKeysGetTapeEncryptionKeysResponseDataInner
      */
-    modified: number;
+    modified: bigint | string | number;
 
     /**
      * Path to key (if stored in a file)
@@ -102,7 +102,7 @@ export function ConfigTapeEncryptionKeysGetTapeEncryptionKeysResponseDataInnerFr
     return {
         
         
-        'created': json['created'],
+        'created': BigInt(json['created']),
         
         'fingerprint': json['fingerprint'] == null ? undefined : json['fingerprint'],
         
@@ -110,7 +110,7 @@ export function ConfigTapeEncryptionKeysGetTapeEncryptionKeysResponseDataInnerFr
         
         'kdf': PbsKdfEnumFromJSON(json['kdf']),
         
-        'modified': json['modified'],
+        'modified': BigInt(json['modified']),
         
         'path': json['path'] == null ? undefined : json['path'],
         
@@ -129,7 +129,7 @@ export function ConfigTapeEncryptionKeysGetTapeEncryptionKeysResponseDataInnerTo
     return {
         
         
-        'created': value['created'],
+        'created': String(value['created']),
         
         'fingerprint': value['fingerprint'],
         
@@ -137,7 +137,7 @@ export function ConfigTapeEncryptionKeysGetTapeEncryptionKeysResponseDataInnerTo
         
         'kdf': PbsKdfEnumToJSON(value['kdf']),
         
-        'modified': value['modified'],
+        'modified': String(value['modified']),
         
         'path': value['path'],
         

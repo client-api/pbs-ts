@@ -40,7 +40,7 @@ export interface AccessTfaGetTfaResponseDataInner {
      * @type {number}
      * @memberof AccessTfaGetTfaResponseDataInner
      */
-    tfaLockedUntil?: number;
+    tfaLockedUntil?: bigint | string | number;
 
     /**
      * The user is locked out of TOTP authentication.
@@ -86,7 +86,7 @@ export function AccessTfaGetTfaResponseDataInnerFromJSONTyped(json: any, ignoreD
         
         'entries': ((json['entries'] as Array<any>).map(AccessTfaGetTfaResponseDataInnerEntriesInnerFromJSON)),
         
-        'tfaLockedUntil': json['tfa-locked-until'] == null ? undefined : json['tfa-locked-until'],
+        'tfaLockedUntil': json['tfa-locked-until'] == null ? undefined : BigInt(json['tfa-locked-until']),
         
         'totpLocked': json['totp-locked'],
         
@@ -109,7 +109,7 @@ export function AccessTfaGetTfaResponseDataInnerToJSONTyped(value?: AccessTfaGet
         
         'entries': ((value['entries'] as Array<any>).map(AccessTfaGetTfaResponseDataInnerEntriesInnerToJSON)),
         
-        'tfa-locked-until': value['tfaLockedUntil'],
+        'tfa-locked-until': value['tfaLockedUntil'] == null ? undefined : String(value['tfaLockedUntil']),
         
         'totp-locked': value['totpLocked'],
         

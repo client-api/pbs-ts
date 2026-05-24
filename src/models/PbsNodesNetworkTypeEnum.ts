@@ -45,7 +45,9 @@ export function PbsNodesNetworkTypeEnumFromJSON(json: any): PbsNodesNetworkTypeE
 }
 
 export function PbsNodesNetworkTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesNetworkTypeEnum {
+
     return json as PbsNodesNetworkTypeEnum;
+
 }
 
 export function PbsNodesNetworkTypeEnumToJSON(value?: PbsNodesNetworkTypeEnum | null): any {

@@ -25,14 +25,14 @@ export interface NodesTimeGetTimeResponseData {
      * @type {number}
      * @memberof NodesTimeGetTimeResponseData
      */
-    localtime: number;
+    localtime: bigint | string | number;
 
     /**
      * Seconds since 1970-01-01 00:00:00 UTC.
      * @type {number}
      * @memberof NodesTimeGetTimeResponseData
      */
-    time: number;
+    time: bigint | string | number;
 
     /**
      * Time zone. The file '/usr/share/zoneinfo/zone.tab' contains the list of valid names.
@@ -68,9 +68,9 @@ export function NodesTimeGetTimeResponseDataFromJSONTyped(json: any, ignoreDiscr
     return {
         
         
-        'localtime': json['localtime'],
+        'localtime': BigInt(json['localtime']),
         
-        'time': json['time'],
+        'time': BigInt(json['time']),
         
         'timezone': json['timezone'],
         
@@ -89,9 +89,9 @@ export function NodesTimeGetTimeResponseDataToJSONTyped(value?: NodesTimeGetTime
     return {
         
         
-        'localtime': value['localtime'],
+        'localtime': String(value['localtime']),
         
-        'time': value['time'],
+        'time': String(value['time']),
         
         'timezone': value['timezone'],
         

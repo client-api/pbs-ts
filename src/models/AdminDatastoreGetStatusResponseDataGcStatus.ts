@@ -40,70 +40,70 @@ export interface AdminDatastoreGetStatusResponseDataGcStatus {
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    diskBytes: number;
+    diskBytes: bigint | string | number;
 
     /**
      * Chunks used on disk.
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    diskChunks: number;
+    diskChunks: bigint | string | number;
 
     /**
      * Sum of bytes referred by index files.
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    indexDataBytes: number;
+    indexDataBytes: bigint | string | number;
 
     /**
      * Number of processed index files.
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    indexFileCount: number;
+    indexFileCount: bigint | string | number;
 
     /**
      * Sum of pending bytes (pending removal - kept for safety).
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    pendingBytes: number;
+    pendingBytes: bigint | string | number;
 
     /**
      * Number of pending chunks (pending removal - kept for safety).
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    pendingChunks: number;
+    pendingChunks: bigint | string | number;
 
     /**
      * Number of chunks marked as .bad by verify that have been removed by GC.
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    removedBad: number;
+    removedBad: bigint | string | number;
 
     /**
      * Sum of removed bytes.
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    removedBytes: number;
+    removedBytes: bigint | string | number;
 
     /**
      * Number of removed chunks.
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    removedChunks: number;
+    removedChunks: bigint | string | number;
 
     /**
      * Number of chunks still marked as .bad after garbage collection.
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataGcStatus
      */
-    stillBad: number;
+    stillBad: bigint | string | number;
 
     /**
      * Unique Process/Task Identifier
@@ -157,25 +157,25 @@ export function AdminDatastoreGetStatusResponseDataGcStatusFromJSONTyped(json: a
         
         'cacheStats': json['cache-stats'] == null ? undefined : AdminDatastoreGetGcResponseDataCacheStatsFromJSON(json['cache-stats']),
         
-        'diskBytes': json['disk-bytes'],
+        'diskBytes': BigInt(json['disk-bytes']),
         
-        'diskChunks': json['disk-chunks'],
+        'diskChunks': BigInt(json['disk-chunks']),
         
-        'indexDataBytes': json['index-data-bytes'],
+        'indexDataBytes': BigInt(json['index-data-bytes']),
         
-        'indexFileCount': json['index-file-count'],
+        'indexFileCount': BigInt(json['index-file-count']),
         
-        'pendingBytes': json['pending-bytes'],
+        'pendingBytes': BigInt(json['pending-bytes']),
         
-        'pendingChunks': json['pending-chunks'],
+        'pendingChunks': BigInt(json['pending-chunks']),
         
-        'removedBad': json['removed-bad'],
+        'removedBad': BigInt(json['removed-bad']),
         
-        'removedBytes': json['removed-bytes'],
+        'removedBytes': BigInt(json['removed-bytes']),
         
-        'removedChunks': json['removed-chunks'],
+        'removedChunks': BigInt(json['removed-chunks']),
         
-        'stillBad': json['still-bad'],
+        'stillBad': BigInt(json['still-bad']),
         
         'upid': json['upid'] == null ? undefined : json['upid'],
         
@@ -196,25 +196,25 @@ export function AdminDatastoreGetStatusResponseDataGcStatusToJSONTyped(value?: A
         
         'cache-stats': AdminDatastoreGetGcResponseDataCacheStatsToJSON(value['cacheStats']),
         
-        'disk-bytes': value['diskBytes'],
+        'disk-bytes': String(value['diskBytes']),
         
-        'disk-chunks': value['diskChunks'],
+        'disk-chunks': String(value['diskChunks']),
         
-        'index-data-bytes': value['indexDataBytes'],
+        'index-data-bytes': String(value['indexDataBytes']),
         
-        'index-file-count': value['indexFileCount'],
+        'index-file-count': String(value['indexFileCount']),
         
-        'pending-bytes': value['pendingBytes'],
+        'pending-bytes': String(value['pendingBytes']),
         
-        'pending-chunks': value['pendingChunks'],
+        'pending-chunks': String(value['pendingChunks']),
         
-        'removed-bad': value['removedBad'],
+        'removed-bad': String(value['removedBad']),
         
-        'removed-bytes': value['removedBytes'],
+        'removed-bytes': String(value['removedBytes']),
         
-        'removed-chunks': value['removedChunks'],
+        'removed-chunks': String(value['removedChunks']),
         
-        'still-bad': value['stillBad'],
+        'still-bad': String(value['stillBad']),
         
         'upid': value['upid'],
         

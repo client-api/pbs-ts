@@ -25,14 +25,14 @@ export interface AdminDatastoreGetStatusResponseDataCountsCt {
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataCountsCt
      */
-    groups: number;
+    groups: bigint | string | number;
 
     /**
      * The number of snapshots of the type.
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseDataCountsCt
      */
-    snapshots: number;
+    snapshots: bigint | string | number;
 
 }
 
@@ -59,9 +59,9 @@ export function AdminDatastoreGetStatusResponseDataCountsCtFromJSONTyped(json: a
     return {
         
         
-        'groups': json['groups'],
+        'groups': BigInt(json['groups']),
         
-        'snapshots': json['snapshots'],
+        'snapshots': BigInt(json['snapshots']),
         
     };
 }
@@ -78,9 +78,9 @@ export function AdminDatastoreGetStatusResponseDataCountsCtToJSONTyped(value?: A
     return {
         
         
-        'groups': value['groups'],
+        'groups': String(value['groups']),
         
-        'snapshots': value['snapshots'],
+        'snapshots': String(value['snapshots']),
         
     };
 }

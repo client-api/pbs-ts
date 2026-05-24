@@ -82,7 +82,7 @@ export interface ConfigRemoteUpdateRemoteRequest {
      * @type {number}
      * @memberof ConfigRemoteUpdateRemoteRequest
      */
-    port?: number;
+    port?: bigint | string | number;
 
     /**
      * Use the http proxy configuration of the node for remote connections.
@@ -135,7 +135,7 @@ export function ConfigRemoteUpdateRemoteRequestFromJSONTyped(json: any, ignoreDi
         
         'password': json['password'] == null ? undefined : json['password'],
         
-        'port': json['port'] == null ? undefined : json['port'],
+        'port': json['port'] == null ? undefined : BigInt(json['port']),
         
         'useNodeProxy': json['use-node-proxy'] == null ? undefined : json['use-node-proxy'],
         
@@ -168,7 +168,7 @@ export function ConfigRemoteUpdateRemoteRequestToJSONTyped(value?: ConfigRemoteU
         
         'password': value['password'],
         
-        'port': value['port'],
+        'port': value['port'] == null ? undefined : String(value['port']),
         
         'use-node-proxy': value['useNodeProxy'],
         

@@ -56,7 +56,9 @@ export function PbsRoleidEnumFromJSON(json: any): PbsRoleidEnum {
 }
 
 export function PbsRoleidEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsRoleidEnum {
+
     return json as PbsRoleidEnum;
+
 }
 
 export function PbsRoleidEnumToJSON(value?: PbsRoleidEnum | null): any {

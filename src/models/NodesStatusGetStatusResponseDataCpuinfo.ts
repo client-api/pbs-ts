@@ -25,7 +25,7 @@ export interface NodesStatusGetStatusResponseDataCpuinfo {
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataCpuinfo
      */
-    cpus: number;
+    cpus: bigint | string | number;
 
     /**
      * The CPU model
@@ -39,7 +39,7 @@ export interface NodesStatusGetStatusResponseDataCpuinfo {
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataCpuinfo
      */
-    sockets: number;
+    sockets: bigint | string | number;
 
 }
 
@@ -68,11 +68,11 @@ export function NodesStatusGetStatusResponseDataCpuinfoFromJSONTyped(json: any, 
     return {
         
         
-        'cpus': json['cpus'],
+        'cpus': BigInt(json['cpus']),
         
         'model': json['model'],
         
-        'sockets': json['sockets'],
+        'sockets': BigInt(json['sockets']),
         
     };
 }
@@ -89,11 +89,11 @@ export function NodesStatusGetStatusResponseDataCpuinfoToJSONTyped(value?: Nodes
     return {
         
         
-        'cpus': value['cpus'],
+        'cpus': String(value['cpus']),
         
         'model': value['model'],
         
-        'sockets': value['sockets'],
+        'sockets': String(value['sockets']),
         
     };
 }

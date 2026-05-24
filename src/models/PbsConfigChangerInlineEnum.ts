@@ -40,7 +40,9 @@ export function PbsConfigChangerInlineEnumFromJSON(json: any): PbsConfigChangerI
 }
 
 export function PbsConfigChangerInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigChangerInlineEnum {
+
     return json as PbsConfigChangerInlineEnum;
+
 }
 
 export function PbsConfigChangerInlineEnumToJSON(value?: PbsConfigChangerInlineEnum | null): any {

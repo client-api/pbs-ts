@@ -25,21 +25,21 @@ export interface NodesStatusGetStatusResponseDataMemory {
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataMemory
      */
-    free: number;
+    free: bigint | string | number;
 
     /**
      * Total memory
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataMemory
      */
-    total: number;
+    total: bigint | string | number;
 
     /**
      * Used memory
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataMemory
      */
-    used: number;
+    used: bigint | string | number;
 
 }
 
@@ -68,11 +68,11 @@ export function NodesStatusGetStatusResponseDataMemoryFromJSONTyped(json: any, i
     return {
         
         
-        'free': json['free'],
+        'free': BigInt(json['free']),
         
-        'total': json['total'],
+        'total': BigInt(json['total']),
         
-        'used': json['used'],
+        'used': BigInt(json['used']),
         
     };
 }
@@ -89,11 +89,11 @@ export function NodesStatusGetStatusResponseDataMemoryToJSONTyped(value?: NodesS
     return {
         
         
-        'free': value['free'],
+        'free': String(value['free']),
         
-        'total': value['total'],
+        'total': String(value['total']),
         
-        'used': value['used'],
+        'used': String(value['used']),
         
     };
 }

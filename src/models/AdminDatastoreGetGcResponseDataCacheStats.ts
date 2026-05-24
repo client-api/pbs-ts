@@ -25,14 +25,14 @@ export interface AdminDatastoreGetGcResponseDataCacheStats {
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseDataCacheStats
      */
-    hits: number;
+    hits: bigint | string | number;
 
     /**
      * Number of atime update cache misses
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseDataCacheStats
      */
-    misses: number;
+    misses: bigint | string | number;
 
 }
 
@@ -59,9 +59,9 @@ export function AdminDatastoreGetGcResponseDataCacheStatsFromJSONTyped(json: any
     return {
         
         
-        'hits': json['hits'],
+        'hits': BigInt(json['hits']),
         
-        'misses': json['misses'],
+        'misses': BigInt(json['misses']),
         
     };
 }
@@ -78,9 +78,9 @@ export function AdminDatastoreGetGcResponseDataCacheStatsToJSONTyped(value?: Adm
     return {
         
         
-        'hits': value['hits'],
+        'hits': String(value['hits']),
         
-        'misses': value['misses'],
+        'misses': String(value['misses']),
         
     };
 }

@@ -40,7 +40,9 @@ export function PbsBackendTypeEnumFromJSON(json: any): PbsBackendTypeEnum {
 }
 
 export function PbsBackendTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsBackendTypeEnum {
+
     return json as PbsBackendTypeEnum;
+
 }
 
 export function PbsBackendTypeEnumToJSON(value?: PbsBackendTypeEnum | null): any {

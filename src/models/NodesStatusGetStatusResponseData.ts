@@ -145,7 +145,7 @@ export interface NodesStatusGetStatusResponseData {
      * @type {number}
      * @memberof NodesStatusGetStatusResponseData
      */
-    uptime: number;
+    uptime: bigint | string | number;
 
     /**
      * Total IO wait since last query.
@@ -219,7 +219,7 @@ export function NodesStatusGetStatusResponseDataFromJSONTyped(json: any, ignoreD
         
         'swap': NodesStatusGetStatusResponseDataSwapFromJSON(json['swap']),
         
-        'uptime': json['uptime'],
+        'uptime': BigInt(json['uptime']),
         
         'wait': json['wait'],
         
@@ -258,7 +258,7 @@ export function NodesStatusGetStatusResponseDataToJSONTyped(value?: NodesStatusG
         
         'swap': NodesStatusGetStatusResponseDataSwapToJSON(value['swap']),
         
-        'uptime': value['uptime'],
+        'uptime': String(value['uptime']),
         
         'wait': value['wait'],
         

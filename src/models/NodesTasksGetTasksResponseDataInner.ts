@@ -25,7 +25,7 @@ export interface NodesTasksGetTasksResponseDataInner {
      * @type {number}
      * @memberof NodesTasksGetTasksResponseDataInner
      */
-    endtime?: number;
+    endtime?: bigint | string | number;
 
     /**
      * The node name where the task is running on.
@@ -39,21 +39,21 @@ export interface NodesTasksGetTasksResponseDataInner {
      * @type {number}
      * @memberof NodesTasksGetTasksResponseDataInner
      */
-    pid: number;
+    pid: bigint | string | number;
 
     /**
      * The task start time (Epoch)
      * @type {number}
      * @memberof NodesTasksGetTasksResponseDataInner
      */
-    pstart: number;
+    pstart: bigint | string | number;
 
     /**
      * The task start time (Epoch)
      * @type {number}
      * @memberof NodesTasksGetTasksResponseDataInner
      */
-    starttime: number;
+    starttime: bigint | string | number;
 
     /**
      * Task end status
@@ -128,15 +128,15 @@ export function NodesTasksGetTasksResponseDataInnerFromJSONTyped(json: any, igno
     return {
         
         
-        'endtime': json['endtime'] == null ? undefined : json['endtime'],
+        'endtime': json['endtime'] == null ? undefined : BigInt(json['endtime']),
         
         'node': json['node'],
         
-        'pid': json['pid'],
+        'pid': BigInt(json['pid']),
         
-        'pstart': json['pstart'],
+        'pstart': BigInt(json['pstart']),
         
-        'starttime': json['starttime'],
+        'starttime': BigInt(json['starttime']),
         
         'status': json['status'] == null ? undefined : json['status'],
         
@@ -163,15 +163,15 @@ export function NodesTasksGetTasksResponseDataInnerToJSONTyped(value?: NodesTask
     return {
         
         
-        'endtime': value['endtime'],
+        'endtime': value['endtime'] == null ? undefined : String(value['endtime']),
         
         'node': value['node'],
         
-        'pid': value['pid'],
+        'pid': String(value['pid']),
         
-        'pstart': value['pstart'],
+        'pstart': String(value['pstart']),
         
-        'starttime': value['starttime'],
+        'starttime': String(value['starttime']),
         
         'status': value['status'],
         

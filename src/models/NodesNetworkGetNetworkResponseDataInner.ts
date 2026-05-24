@@ -166,7 +166,7 @@ export interface NodesNetworkGetNetworkResponseDataInner {
      * @type {number}
      * @memberof NodesNetworkGetNetworkResponseDataInner
      */
-    mtu?: number;
+    mtu?: bigint | string | number;
 
     /**
      * Network interface name.
@@ -208,7 +208,7 @@ export interface NodesNetworkGetNetworkResponseDataInner {
      * @type {number}
      * @memberof NodesNetworkGetNetworkResponseDataInner
      */
-    vlanId?: number;
+    vlanId?: bigint | string | number;
 
     /**
      * Network interface name.
@@ -303,7 +303,7 @@ export function NodesNetworkGetNetworkResponseDataInnerFromJSONTyped(json: any, 
         
         'method6': json['method6'] == null ? undefined : PbsNodesNetworkMethodEnumFromJSON(json['method6']),
         
-        'mtu': json['mtu'] == null ? undefined : json['mtu'],
+        'mtu': json['mtu'] == null ? undefined : BigInt(json['mtu']),
         
         'name': json['name'],
         
@@ -315,7 +315,7 @@ export function NodesNetworkGetNetworkResponseDataInnerFromJSONTyped(json: any, 
         
         'type': PbsNodesNetworkTypeEnumFromJSON(json['type']),
         
-        'vlanId': json['vlan-id'] == null ? undefined : json['vlan-id'],
+        'vlanId': json['vlan-id'] == null ? undefined : BigInt(json['vlan-id']),
         
         'vlanRawDevice': json['vlan-raw-device'] == null ? undefined : json['vlan-raw-device'],
         
@@ -366,7 +366,7 @@ export function NodesNetworkGetNetworkResponseDataInnerToJSONTyped(value?: Nodes
         
         'method6': PbsNodesNetworkMethodEnumToJSON(value['method6']),
         
-        'mtu': value['mtu'],
+        'mtu': value['mtu'] == null ? undefined : String(value['mtu']),
         
         'name': value['name'],
         
@@ -378,7 +378,7 @@ export function NodesNetworkGetNetworkResponseDataInnerToJSONTyped(value?: Nodes
         
         'type': PbsNodesNetworkTypeEnumToJSON(value['type']),
         
-        'vlan-id': value['vlanId'],
+        'vlan-id': value['vlanId'] == null ? undefined : String(value['vlanId']),
         
         'vlan-raw-device': value['vlanRawDevice'],
         

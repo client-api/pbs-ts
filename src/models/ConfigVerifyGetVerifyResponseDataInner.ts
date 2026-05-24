@@ -60,7 +60,7 @@ export interface ConfigVerifyGetVerifyResponseDataInner {
      * @type {number}
      * @memberof ConfigVerifyGetVerifyResponseDataInner
      */
-    outdatedAfter?: number;
+    outdatedAfter?: bigint | string | number;
 
     /**
      * The number of threads to use for reading chunks in verify job.
@@ -133,7 +133,7 @@ export function ConfigVerifyGetVerifyResponseDataInnerFromJSONTyped(json: any, i
         
         'ns': json['ns'] == null ? undefined : json['ns'],
         
-        'outdatedAfter': json['outdated-after'] == null ? undefined : json['outdated-after'],
+        'outdatedAfter': json['outdated-after'] == null ? undefined : BigInt(json['outdated-after']),
         
         'readThreads': json['read-threads'] == null ? undefined : json['read-threads'],
         
@@ -168,7 +168,7 @@ export function ConfigVerifyGetVerifyResponseDataInnerToJSONTyped(value?: Config
         
         'ns': value['ns'],
         
-        'outdated-after': value['outdatedAfter'],
+        'outdated-after': value['outdatedAfter'] == null ? undefined : String(value['outdatedAfter']),
         
         'read-threads': value['readThreads'],
         

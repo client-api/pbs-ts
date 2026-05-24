@@ -25,7 +25,7 @@ export interface TapeMediaGetMediaSetsResponseDataInner {
      * @type {number}
      * @memberof TapeMediaGetMediaSetsResponseDataInner
      */
-    mediaSetCtime: number;
+    mediaSetCtime: bigint | string | number;
 
     /**
      * Media set name
@@ -77,7 +77,7 @@ export function TapeMediaGetMediaSetsResponseDataInnerFromJSONTyped(json: any, i
     return {
         
         
-        'mediaSetCtime': json['media-set-ctime'],
+        'mediaSetCtime': BigInt(json['media-set-ctime']),
         
         'mediaSetName': json['media-set-name'],
         
@@ -100,7 +100,7 @@ export function TapeMediaGetMediaSetsResponseDataInnerToJSONTyped(value?: TapeMe
     return {
         
         
-        'media-set-ctime': value['mediaSetCtime'],
+        'media-set-ctime': String(value['mediaSetCtime']),
         
         'media-set-name': value['mediaSetName'],
         

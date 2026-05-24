@@ -42,7 +42,9 @@ export function PbsConfigNotificationsTypeEnumFromJSON(json: any): PbsConfigNoti
 }
 
 export function PbsConfigNotificationsTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigNotificationsTypeEnum {
+
     return json as PbsConfigNotificationsTypeEnum;
+
 }
 
 export function PbsConfigNotificationsTypeEnumToJSON(value?: PbsConfigNotificationsTypeEnum | null): any {

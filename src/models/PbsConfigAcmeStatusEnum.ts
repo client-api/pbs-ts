@@ -42,7 +42,9 @@ export function PbsConfigAcmeStatusEnumFromJSON(json: any): PbsConfigAcmeStatusE
 }
 
 export function PbsConfigAcmeStatusEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigAcmeStatusEnum {
+
     return json as PbsConfigAcmeStatusEnum;
+
 }
 
 export function PbsConfigAcmeStatusEnumToJSON(value?: PbsConfigAcmeStatusEnum | null): any {

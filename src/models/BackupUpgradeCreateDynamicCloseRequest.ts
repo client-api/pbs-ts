@@ -25,7 +25,7 @@ export interface BackupUpgradeCreateDynamicCloseRequest {
      * @type {number}
      * @memberof BackupUpgradeCreateDynamicCloseRequest
      */
-    chunkCount: number;
+    chunkCount: bigint | string | number;
 
     /**
      * Digest list checksum.
@@ -39,7 +39,7 @@ export interface BackupUpgradeCreateDynamicCloseRequest {
      * @type {number}
      * @memberof BackupUpgradeCreateDynamicCloseRequest
      */
-    size: number;
+    size: bigint | string | number;
 
     /**
      * Dynamic writer ID.
@@ -77,11 +77,11 @@ export function BackupUpgradeCreateDynamicCloseRequestFromJSONTyped(json: any, i
     return {
         
         
-        'chunkCount': json['chunk-count'],
+        'chunkCount': BigInt(json['chunk-count']),
         
         'csum': json['csum'],
         
-        'size': json['size'],
+        'size': BigInt(json['size']),
         
         'wid': json['wid'],
         
@@ -100,11 +100,11 @@ export function BackupUpgradeCreateDynamicCloseRequestToJSONTyped(value?: Backup
     return {
         
         
-        'chunk-count': value['chunkCount'],
+        'chunk-count': String(value['chunkCount']),
         
         'csum': value['csum'],
         
-        'size': value['size'],
+        'size': String(value['size']),
         
         'wid': value['wid'],
         

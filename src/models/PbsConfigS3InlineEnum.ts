@@ -47,7 +47,9 @@ export function PbsConfigS3InlineEnumFromJSON(json: any): PbsConfigS3InlineEnum 
 }
 
 export function PbsConfigS3InlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigS3InlineEnum {
+
     return json as PbsConfigS3InlineEnum;
+
 }
 
 export function PbsConfigS3InlineEnumToJSON(value?: PbsConfigS3InlineEnum | null): any {

@@ -46,7 +46,7 @@ export interface ConfigMetricsGetInfluxdbUdpResponseDataInner {
      * @type {number}
      * @memberof ConfigMetricsGetInfluxdbUdpResponseDataInner
      */
-    mtu?: number;
+    mtu?: bigint | string | number;
 
     /**
      * Metrics Server ID.
@@ -89,7 +89,7 @@ export function ConfigMetricsGetInfluxdbUdpResponseDataInnerFromJSONTyped(json: 
         
         'host': json['host'],
         
-        'mtu': json['mtu'] == null ? undefined : json['mtu'],
+        'mtu': json['mtu'] == null ? undefined : BigInt(json['mtu']),
         
         'name': json['name'],
         
@@ -114,7 +114,7 @@ export function ConfigMetricsGetInfluxdbUdpResponseDataInnerToJSONTyped(value?: 
         
         'host': value['host'],
         
-        'mtu': value['mtu'],
+        'mtu': value['mtu'] == null ? undefined : String(value['mtu']),
         
         'name': value['name'],
         

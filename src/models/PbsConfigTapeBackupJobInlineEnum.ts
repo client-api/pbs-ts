@@ -49,7 +49,9 @@ export function PbsConfigTapeBackupJobInlineEnumFromJSON(json: any): PbsConfigTa
 }
 
 export function PbsConfigTapeBackupJobInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigTapeBackupJobInlineEnum {
+
     return json as PbsConfigTapeBackupJobInlineEnum;
+
 }
 
 export function PbsConfigTapeBackupJobInlineEnumToJSON(value?: PbsConfigTapeBackupJobInlineEnum | null): any {

@@ -45,7 +45,9 @@ export function PbsNodesDisksUsedEnumFromJSON(json: any): PbsNodesDisksUsedEnum 
 }
 
 export function PbsNodesDisksUsedEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesDisksUsedEnum {
+
     return json as PbsNodesDisksUsedEnum;
+
 }
 
 export function PbsNodesDisksUsedEnumToJSON(value?: PbsNodesDisksUsedEnum | null): any {

@@ -41,7 +41,9 @@ export function PbsSyncDirectionEnumFromJSON(json: any): PbsSyncDirectionEnum {
 }
 
 export function PbsSyncDirectionEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsSyncDirectionEnum {
+
     return json as PbsSyncDirectionEnum;
+
 }
 
 export function PbsSyncDirectionEnumToJSON(value?: PbsSyncDirectionEnum | null): any {

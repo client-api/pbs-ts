@@ -48,7 +48,9 @@ export function PbsConfigPruneInlineEnumFromJSON(json: any): PbsConfigPruneInlin
 }
 
 export function PbsConfigPruneInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigPruneInlineEnum {
+
     return json as PbsConfigPruneInlineEnum;
+
 }
 
 export function PbsConfigPruneInlineEnumToJSON(value?: PbsConfigPruneInlineEnum | null): any {

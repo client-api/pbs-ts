@@ -50,7 +50,9 @@ export function PbsDeleteEnumFromJSON(json: any): PbsDeleteEnum {
 }
 
 export function PbsDeleteEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsDeleteEnum {
+
     return json as PbsDeleteEnum;
+
 }
 
 export function PbsDeleteEnumToJSON(value?: PbsDeleteEnum | null): any {

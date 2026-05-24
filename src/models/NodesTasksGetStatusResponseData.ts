@@ -46,21 +46,21 @@ export interface NodesTasksGetStatusResponseData {
      * @type {number}
      * @memberof NodesTasksGetStatusResponseData
      */
-    pid: number;
+    pid: bigint | string | number;
 
     /**
      * The Unix process start time from `/proc/pid/stat`
      * @type {number}
      * @memberof NodesTasksGetStatusResponseData
      */
-    pstart: number;
+    pstart: bigint | string | number;
 
     /**
      * The task start time (Epoch)
      * @type {number}
      * @memberof NodesTasksGetStatusResponseData
      */
-    starttime: number;
+    starttime: bigint | string | number;
 
     /**
      * 'running' or 'stopped'
@@ -145,11 +145,11 @@ export function NodesTasksGetStatusResponseDataFromJSONTyped(json: any, ignoreDi
         
         'node': json['node'],
         
-        'pid': json['pid'],
+        'pid': BigInt(json['pid']),
         
-        'pstart': json['pstart'],
+        'pstart': BigInt(json['pstart']),
         
-        'starttime': json['starttime'],
+        'starttime': BigInt(json['starttime']),
         
         'status': json['status'],
         
@@ -182,11 +182,11 @@ export function NodesTasksGetStatusResponseDataToJSONTyped(value?: NodesTasksGet
         
         'node': value['node'],
         
-        'pid': value['pid'],
+        'pid': String(value['pid']),
         
-        'pstart': value['pstart'],
+        'pstart': String(value['pstart']),
         
-        'starttime': value['starttime'],
+        'starttime': String(value['starttime']),
         
         'status': value['status'],
         

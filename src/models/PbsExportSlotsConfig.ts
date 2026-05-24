@@ -32,7 +32,7 @@ export interface PbsExportSlotsConfig {
      * @type {number}
      * @memberof PbsExportSlotsConfig
      */
-    items: number;
+    items: bigint | string | number;
 
     /**
      * 
@@ -70,7 +70,7 @@ export function PbsExportSlotsConfigFromJSONTyped(json: any, ignoreDiscriminator
         
         'description': json['description'],
         
-        'items': json['items'],
+        'items': BigInt(json['items']),
         
         'type': json['type'],
         
@@ -91,7 +91,7 @@ export function PbsExportSlotsConfigToJSONTyped(value?: PbsExportSlotsConfig | n
         
         'description': value['description'],
         
-        'items': value['items'],
+        'items': String(value['items']),
         
         'type': value['type'],
         

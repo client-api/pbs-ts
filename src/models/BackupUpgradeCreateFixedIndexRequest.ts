@@ -39,7 +39,7 @@ export interface BackupUpgradeCreateFixedIndexRequest {
      * @type {number}
      * @memberof BackupUpgradeCreateFixedIndexRequest
      */
-    size?: number;
+    size?: bigint | string | number;
 
 }
 
@@ -70,7 +70,7 @@ export function BackupUpgradeCreateFixedIndexRequestFromJSONTyped(json: any, ign
         
         'reuseCsum': json['reuse-csum'] == null ? undefined : json['reuse-csum'],
         
-        'size': json['size'] == null ? undefined : json['size'],
+        'size': json['size'] == null ? undefined : BigInt(json['size']),
         
     };
 }
@@ -91,7 +91,7 @@ export function BackupUpgradeCreateFixedIndexRequestToJSONTyped(value?: BackupUp
         
         'reuse-csum': value['reuseCsum'],
         
-        'size': value['size'],
+        'size': value['size'] == null ? undefined : String(value['size']),
         
     };
 }

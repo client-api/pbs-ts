@@ -44,7 +44,9 @@ export function PbsTimeframeEnumFromJSON(json: any): PbsTimeframeEnum {
 }
 
 export function PbsTimeframeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsTimeframeEnum {
+
     return json as PbsTimeframeEnum;
+
 }
 
 export function PbsTimeframeEnumToJSON(value?: PbsTimeframeEnum | null): any {

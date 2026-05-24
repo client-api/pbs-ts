@@ -42,7 +42,9 @@ export function PbsNodesTasksInlineEnumFromJSON(json: any): PbsNodesTasksInlineE
 }
 
 export function PbsNodesTasksInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesTasksInlineEnum {
+
     return json as PbsNodesTasksInlineEnum;
+
 }
 
 export function PbsNodesTasksInlineEnumToJSON(value?: PbsNodesTasksInlineEnum | null): any {

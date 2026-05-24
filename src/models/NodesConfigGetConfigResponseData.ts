@@ -139,7 +139,7 @@ export interface NodesConfigGetConfigResponseData {
      * @type {number}
      * @memberof NodesConfigGetConfigResponseData
      */
-    taskLogMaxDays?: number;
+    taskLogMaxDays?: bigint | string | number;
 
 }
 
@@ -204,7 +204,7 @@ export function NodesConfigGetConfigResponseDataFromJSONTyped(json: any, ignoreD
         
         'httpProxy': json['http-proxy'] == null ? undefined : json['http-proxy'],
         
-        'taskLogMaxDays': json['task-log-max-days'] == null ? undefined : json['task-log-max-days'],
+        'taskLogMaxDays': json['task-log-max-days'] == null ? undefined : BigInt(json['task-log-max-days']),
         
     };
 }
@@ -247,7 +247,7 @@ export function NodesConfigGetConfigResponseDataToJSONTyped(value?: NodesConfigG
         
         'http-proxy': value['httpProxy'],
         
-        'task-log-max-days': value['taskLogMaxDays'],
+        'task-log-max-days': value['taskLogMaxDays'] == null ? undefined : String(value['taskLogMaxDays']),
         
     };
 }

@@ -39,7 +39,7 @@ export interface NodesAptCreateRepositoriesRequest {
      * @type {number}
      * @memberof NodesAptCreateRepositoriesRequest
      */
-    index: number;
+    index: bigint | string | number;
 
     /**
      * Path to the containing file.
@@ -79,7 +79,7 @@ export function NodesAptCreateRepositoriesRequestFromJSONTyped(json: any, ignore
         
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
         
-        'index': json['index'],
+        'index': BigInt(json['index']),
         
         'path': json['path'],
         
@@ -102,7 +102,7 @@ export function NodesAptCreateRepositoriesRequestToJSONTyped(value?: NodesAptCre
         
         'enabled': value['enabled'],
         
-        'index': value['index'],
+        'index': String(value['index']),
         
         'path': value['path'],
         

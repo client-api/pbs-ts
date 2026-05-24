@@ -54,7 +54,7 @@ export interface AdminDatastoreGetStatusResponseData {
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseData
      */
-    avail: number;
+    avail: bigint | string | number;
 
     /**
      * Datastore backend type
@@ -89,14 +89,14 @@ export interface AdminDatastoreGetStatusResponseData {
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseData
      */
-    total: number;
+    total: bigint | string | number;
 
     /**
      * Used space (bytes).
      * @type {number}
      * @memberof AdminDatastoreGetStatusResponseData
      */
-    used: number;
+    used: bigint | string | number;
 
 }
 
@@ -132,7 +132,7 @@ export function AdminDatastoreGetStatusResponseDataFromJSONTyped(json: any, igno
     return {
         
         
-        'avail': json['avail'],
+        'avail': BigInt(json['avail']),
         
         'backendType': PbsBackendTypeEnumFromJSON(json['backend-type']),
         
@@ -142,9 +142,9 @@ export function AdminDatastoreGetStatusResponseDataFromJSONTyped(json: any, igno
         
         's3Statistics': json['s3-statistics'] == null ? undefined : AdminDatastoreGetStatusResponseDataS3StatisticsFromJSON(json['s3-statistics']),
         
-        'total': json['total'],
+        'total': BigInt(json['total']),
         
-        'used': json['used'],
+        'used': BigInt(json['used']),
         
     };
 }
@@ -161,7 +161,7 @@ export function AdminDatastoreGetStatusResponseDataToJSONTyped(value?: AdminData
     return {
         
         
-        'avail': value['avail'],
+        'avail': String(value['avail']),
         
         'backend-type': PbsBackendTypeEnumToJSON(value['backendType']),
         
@@ -171,9 +171,9 @@ export function AdminDatastoreGetStatusResponseDataToJSONTyped(value?: AdminData
         
         's3-statistics': AdminDatastoreGetStatusResponseDataS3StatisticsToJSON(value['s3Statistics']),
         
-        'total': value['total'],
+        'total': String(value['total']),
         
-        'used': value['used'],
+        'used': String(value['used']),
         
     };
 }

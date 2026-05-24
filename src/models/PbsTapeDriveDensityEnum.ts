@@ -49,7 +49,9 @@ export function PbsTapeDriveDensityEnumFromJSON(json: any): PbsTapeDriveDensityE
 }
 
 export function PbsTapeDriveDensityEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsTapeDriveDensityEnum {
+
     return json as PbsTapeDriveDensityEnum;
+
 }
 
 export function PbsTapeDriveDensityEnumToJSON(value?: PbsTapeDriveDensityEnum | null): any {

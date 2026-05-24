@@ -44,7 +44,9 @@ export function PbsNodesSubscriptionStatusEnumFromJSON(json: any): PbsNodesSubsc
 }
 
 export function PbsNodesSubscriptionStatusEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesSubscriptionStatusEnum {
+
     return json as PbsNodesSubscriptionStatusEnum;
+
 }
 
 export function PbsNodesSubscriptionStatusEnumToJSON(value?: PbsNodesSubscriptionStatusEnum | null): any {

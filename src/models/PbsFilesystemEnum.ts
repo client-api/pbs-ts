@@ -40,7 +40,9 @@ export function PbsFilesystemEnumFromJSON(json: any): PbsFilesystemEnum {
 }
 
 export function PbsFilesystemEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsFilesystemEnum {
+
     return json as PbsFilesystemEnum;
+
 }
 
 export function PbsFilesystemEnumToJSON(value?: PbsFilesystemEnum | null): any {

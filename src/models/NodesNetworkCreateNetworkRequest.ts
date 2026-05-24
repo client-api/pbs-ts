@@ -187,7 +187,7 @@ export interface NodesNetworkCreateNetworkRequest {
      * @type {number}
      * @memberof NodesNetworkCreateNetworkRequest
      */
-    vlanId?: number;
+    vlanId?: bigint | string | number;
 
     /**
      * Network interface name.
@@ -276,7 +276,7 @@ export function NodesNetworkCreateNetworkRequestFromJSONTyped(json: any, ignoreD
         
         'type': json['type'] == null ? undefined : PbsNodesNetworkTypeEnumFromJSON(json['type']),
         
-        'vlanId': json['vlan-id'] == null ? undefined : json['vlan-id'],
+        'vlanId': json['vlan-id'] == null ? undefined : BigInt(json['vlan-id']),
         
         'vlanRawDevice': json['vlan-raw-device'] == null ? undefined : json['vlan-raw-device'],
         
@@ -331,7 +331,7 @@ export function NodesNetworkCreateNetworkRequestToJSONTyped(value?: NodesNetwork
         
         'type': PbsNodesNetworkTypeEnumToJSON(value['type']),
         
-        'vlan-id': value['vlanId'],
+        'vlan-id': value['vlanId'] == null ? undefined : String(value['vlanId']),
         
         'vlan-raw-device': value['vlanRawDevice'],
         

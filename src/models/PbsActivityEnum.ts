@@ -54,7 +54,9 @@ export function PbsActivityEnumFromJSON(json: any): PbsActivityEnum {
 }
 
 export function PbsActivityEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsActivityEnum {
+
     return json as PbsActivityEnum;
+
 }
 
 export function PbsActivityEnumToJSON(value?: PbsActivityEnum | null): any {

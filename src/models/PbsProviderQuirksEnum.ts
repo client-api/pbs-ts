@@ -40,7 +40,9 @@ export function PbsProviderQuirksEnumFromJSON(json: any): PbsProviderQuirksEnum 
 }
 
 export function PbsProviderQuirksEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsProviderQuirksEnum {
+
     return json as PbsProviderQuirksEnum;
+
 }
 
 export function PbsProviderQuirksEnumToJSON(value?: PbsProviderQuirksEnum | null): any {

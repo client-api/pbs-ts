@@ -1,8 +1,8 @@
 import { describe, test, expect, beforeAll, afterAll } from 'vitest';
 
 import { loadCredentials, type Credentials } from '../helpers/credentials';
-import { createTokenClient } from '../helpers/client';
-import { cleanupE2E, E2E_PREFIX } from '../helpers/fixtures';
+import { createTokenClient, createTicketSession } from '../helpers/client';
+import { cleanupE2E, E2E_PREFIX, firstNode } from '../helpers/fixtures';
 import { Pbs } from '../../src/Pbs';
 
 /**
@@ -27,25 +27,23 @@ describe('types', () => {
     await cleanupE2E(pbs);
   });
 
-  /**
-   * The generator emits `format: int64` fields as TypeScript `number`,
-   * which silently truncates at 2^53. The contract is "bigint must
-   * round-trip losslessly"; this assertion fails today.
-   *
-   * Marked `.fails()` so the suite stays green while the generator
-   * issue is open upstream — when the generator is fixed to emit
-   * `bigint`, this test starts succeeding and `.fails()` will
-   * (correctly) flip the suite red until the marker is removed.
-   *
-   * Upstream issue: bencurio/pve-openapi  (to file)
-   */
-  test.fails('SC-50: bigint int64 fields are typed as bigint, not number', async () => {
-    const res = await pbs.nodes().getNodes();
-    const nodes = (res as { data?: Array<{ uptime?: number | bigint }> }).data ?? [];
-    const uptime = nodes[0]?.uptime;
+  test('SC-50: bigint int64 fields are typed as bigint (no silent truncation)', async () => {
+    // PBS's `/nodes` (list) requires a permission the test token doesn't
+    // have; use `/nodes/{node}/status` which the token can read and which
+    // exposes int64 `uptime` directly on its data payload.
+    const node = await firstNodeTicketAuthed();
+    const res = await pbs.nodesStatus().getStatus({ node });
+    const uptime = (res as { data?: { uptime?: bigint } }).data?.uptime;
     expect(uptime).toBeDefined();
     expect(typeof uptime).toBe('bigint');
   });
+
+  async function firstNodeTicketAuthed(): Promise<string> {
+    // `firstNode` from fixtures requires `/nodes` which the token can't
+    // see; ticket-auth a fresh session for this one call.
+    const session = await createTicketSession(creds);
+    return firstNode(session.pbs);
+  }
 
   test('SC-51: nullable fields surface as undefined', async () => {
     // Create a user with no comment (the field is optional + nullable).

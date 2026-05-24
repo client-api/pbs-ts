@@ -40,42 +40,42 @@ export interface AdminDatastoreGetGcResponseData {
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    diskBytes: number;
+    diskBytes: bigint | string | number;
 
     /**
      * Chunks used on disk.
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    diskChunks: number;
+    diskChunks: bigint | string | number;
 
     /**
      * Duration of last gc run
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    duration?: number;
+    duration?: bigint | string | number;
 
     /**
      * Sum of bytes referred by index files.
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    indexDataBytes: number;
+    indexDataBytes: bigint | string | number;
 
     /**
      * Number of processed index files.
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    indexFileCount: number;
+    indexFileCount: bigint | string | number;
 
     /**
      * Endtime of the last gc run
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    lastRunEndtime?: number;
+    lastRunEndtime?: bigint | string | number;
 
     /**
      * State of the last gc run
@@ -89,42 +89,42 @@ export interface AdminDatastoreGetGcResponseData {
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    nextRun?: number;
+    nextRun?: bigint | string | number;
 
     /**
      * Sum of pending bytes (pending removal - kept for safety).
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    pendingBytes: number;
+    pendingBytes: bigint | string | number;
 
     /**
      * Number of pending chunks (pending removal - kept for safety).
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    pendingChunks: number;
+    pendingChunks: bigint | string | number;
 
     /**
      * Number of chunks marked as .bad by verify that have been removed by GC.
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    removedBad: number;
+    removedBad: bigint | string | number;
 
     /**
      * Sum of removed bytes.
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    removedBytes: number;
+    removedBytes: bigint | string | number;
 
     /**
      * Number of removed chunks.
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    removedChunks: number;
+    removedChunks: bigint | string | number;
 
     /**
      * Schedule of the gc job
@@ -138,7 +138,7 @@ export interface AdminDatastoreGetGcResponseData {
      * @type {number}
      * @memberof AdminDatastoreGetGcResponseData
      */
-    stillBad: number;
+    stillBad: bigint | string | number;
 
     /**
      * Datastore
@@ -206,35 +206,35 @@ export function AdminDatastoreGetGcResponseDataFromJSONTyped(json: any, ignoreDi
         
         'cacheStats': json['cache-stats'] == null ? undefined : AdminDatastoreGetGcResponseDataCacheStatsFromJSON(json['cache-stats']),
         
-        'diskBytes': json['disk-bytes'],
+        'diskBytes': BigInt(json['disk-bytes']),
         
-        'diskChunks': json['disk-chunks'],
+        'diskChunks': BigInt(json['disk-chunks']),
         
-        'duration': json['duration'] == null ? undefined : json['duration'],
+        'duration': json['duration'] == null ? undefined : BigInt(json['duration']),
         
-        'indexDataBytes': json['index-data-bytes'],
+        'indexDataBytes': BigInt(json['index-data-bytes']),
         
-        'indexFileCount': json['index-file-count'],
+        'indexFileCount': BigInt(json['index-file-count']),
         
-        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : json['last-run-endtime'],
+        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : BigInt(json['last-run-endtime']),
         
         'lastRunState': json['last-run-state'] == null ? undefined : json['last-run-state'],
         
-        'nextRun': json['next-run'] == null ? undefined : json['next-run'],
+        'nextRun': json['next-run'] == null ? undefined : BigInt(json['next-run']),
         
-        'pendingBytes': json['pending-bytes'],
+        'pendingBytes': BigInt(json['pending-bytes']),
         
-        'pendingChunks': json['pending-chunks'],
+        'pendingChunks': BigInt(json['pending-chunks']),
         
-        'removedBad': json['removed-bad'],
+        'removedBad': BigInt(json['removed-bad']),
         
-        'removedBytes': json['removed-bytes'],
+        'removedBytes': BigInt(json['removed-bytes']),
         
-        'removedChunks': json['removed-chunks'],
+        'removedChunks': BigInt(json['removed-chunks']),
         
         'schedule': json['schedule'] == null ? undefined : json['schedule'],
         
-        'stillBad': json['still-bad'],
+        'stillBad': BigInt(json['still-bad']),
         
         'store': json['store'],
         
@@ -257,35 +257,35 @@ export function AdminDatastoreGetGcResponseDataToJSONTyped(value?: AdminDatastor
         
         'cache-stats': AdminDatastoreGetGcResponseDataCacheStatsToJSON(value['cacheStats']),
         
-        'disk-bytes': value['diskBytes'],
+        'disk-bytes': String(value['diskBytes']),
         
-        'disk-chunks': value['diskChunks'],
+        'disk-chunks': String(value['diskChunks']),
         
-        'duration': value['duration'],
+        'duration': value['duration'] == null ? undefined : String(value['duration']),
         
-        'index-data-bytes': value['indexDataBytes'],
+        'index-data-bytes': String(value['indexDataBytes']),
         
-        'index-file-count': value['indexFileCount'],
+        'index-file-count': String(value['indexFileCount']),
         
-        'last-run-endtime': value['lastRunEndtime'],
+        'last-run-endtime': value['lastRunEndtime'] == null ? undefined : String(value['lastRunEndtime']),
         
         'last-run-state': value['lastRunState'],
         
-        'next-run': value['nextRun'],
+        'next-run': value['nextRun'] == null ? undefined : String(value['nextRun']),
         
-        'pending-bytes': value['pendingBytes'],
+        'pending-bytes': String(value['pendingBytes']),
         
-        'pending-chunks': value['pendingChunks'],
+        'pending-chunks': String(value['pendingChunks']),
         
-        'removed-bad': value['removedBad'],
+        'removed-bad': String(value['removedBad']),
         
-        'removed-bytes': value['removedBytes'],
+        'removed-bytes': String(value['removedBytes']),
         
-        'removed-chunks': value['removedChunks'],
+        'removed-chunks': String(value['removedChunks']),
         
         'schedule': value['schedule'],
         
-        'still-bad': value['stillBad'],
+        'still-bad': String(value['stillBad']),
         
         'store': value['store'],
         

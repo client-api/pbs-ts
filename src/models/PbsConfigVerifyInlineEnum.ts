@@ -46,7 +46,9 @@ export function PbsConfigVerifyInlineEnumFromJSON(json: any): PbsConfigVerifyInl
 }
 
 export function PbsConfigVerifyInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigVerifyInlineEnum {
+
     return json as PbsConfigVerifyInlineEnum;
+
 }
 
 export function PbsConfigVerifyInlineEnumToJSON(value?: PbsConfigVerifyInlineEnum | null): any {

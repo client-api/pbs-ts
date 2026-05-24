@@ -25,7 +25,7 @@ export interface TapeMediaGetContentResponseDataInner {
      * @type {number}
      * @memberof TapeMediaGetContentResponseDataInner
      */
-    backupTime: number;
+    backupTime: bigint | string | number;
 
     /**
      * Media label text (or Barcode)
@@ -39,7 +39,7 @@ export interface TapeMediaGetContentResponseDataInner {
      * @type {number}
      * @memberof TapeMediaGetContentResponseDataInner
      */
-    mediaSetCtime: number;
+    mediaSetCtime: bigint | string | number;
 
     /**
      * Media set name
@@ -67,7 +67,7 @@ export interface TapeMediaGetContentResponseDataInner {
      * @type {number}
      * @memberof TapeMediaGetContentResponseDataInner
      */
-    seqNr: number;
+    seqNr: bigint | string | number;
 
     /**
      * Backup snapshot
@@ -131,11 +131,11 @@ export function TapeMediaGetContentResponseDataInnerFromJSONTyped(json: any, ign
     return {
         
         
-        'backupTime': json['backup-time'],
+        'backupTime': BigInt(json['backup-time']),
         
         'labelText': json['label-text'],
         
-        'mediaSetCtime': json['media-set-ctime'],
+        'mediaSetCtime': BigInt(json['media-set-ctime']),
         
         'mediaSetName': json['media-set-name'],
         
@@ -143,7 +143,7 @@ export function TapeMediaGetContentResponseDataInnerFromJSONTyped(json: any, ign
         
         'pool': json['pool'],
         
-        'seqNr': json['seq-nr'],
+        'seqNr': BigInt(json['seq-nr']),
         
         'snapshot': json['snapshot'],
         
@@ -166,11 +166,11 @@ export function TapeMediaGetContentResponseDataInnerToJSONTyped(value?: TapeMedi
     return {
         
         
-        'backup-time': value['backupTime'],
+        'backup-time': String(value['backupTime']),
         
         'label-text': value['labelText'],
         
-        'media-set-ctime': value['mediaSetCtime'],
+        'media-set-ctime': String(value['mediaSetCtime']),
         
         'media-set-name': value['mediaSetName'],
         
@@ -178,7 +178,7 @@ export function TapeMediaGetContentResponseDataInnerToJSONTyped(value?: TapeMedi
         
         'pool': value['pool'],
         
-        'seq-nr': value['seqNr'],
+        'seq-nr': String(value['seqNr']),
         
         'snapshot': value['snapshot'],
         

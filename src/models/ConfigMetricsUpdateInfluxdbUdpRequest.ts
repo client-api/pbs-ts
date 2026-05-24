@@ -68,7 +68,7 @@ export interface ConfigMetricsUpdateInfluxdbUdpRequest {
      * @type {number}
      * @memberof ConfigMetricsUpdateInfluxdbUdpRequest
      */
-    mtu?: number;
+    mtu?: bigint | string | number;
 
 }
 
@@ -107,7 +107,7 @@ export function ConfigMetricsUpdateInfluxdbUdpRequestFromJSONTyped(json: any, ig
         
         'host': json['host'] == null ? undefined : json['host'],
         
-        'mtu': json['mtu'] == null ? undefined : json['mtu'],
+        'mtu': json['mtu'] == null ? undefined : BigInt(json['mtu']),
         
     };
 }
@@ -134,7 +134,7 @@ export function ConfigMetricsUpdateInfluxdbUdpRequestToJSONTyped(value?: ConfigM
         
         'host': value['host'],
         
-        'mtu': value['mtu'],
+        'mtu': value['mtu'] == null ? undefined : String(value['mtu']),
         
     };
 }

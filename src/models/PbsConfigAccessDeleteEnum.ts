@@ -40,7 +40,9 @@ export function PbsConfigAccessDeleteEnumFromJSON(json: any): PbsConfigAccessDel
 }
 
 export function PbsConfigAccessDeleteEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigAccessDeleteEnum {
+
     return json as PbsConfigAccessDeleteEnum;
+
 }
 
 export function PbsConfigAccessDeleteEnumToJSON(value?: PbsConfigAccessDeleteEnum | null): any {

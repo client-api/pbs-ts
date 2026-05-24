@@ -45,7 +45,9 @@ export function PbsConfigTrafficControlInlineEnumFromJSON(json: any): PbsConfigT
 }
 
 export function PbsConfigTrafficControlInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigTrafficControlInlineEnum {
+
     return json as PbsConfigTrafficControlInlineEnum;
+
 }
 
 export function PbsConfigTrafficControlInlineEnumToJSON(value?: PbsConfigTrafficControlInlineEnum | null): any {

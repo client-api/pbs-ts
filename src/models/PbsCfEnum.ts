@@ -40,7 +40,9 @@ export function PbsCfEnumFromJSON(json: any): PbsCfEnum {
 }
 
 export function PbsCfEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsCfEnum {
+
     return json as PbsCfEnum;
+
 }
 
 export function PbsCfEnumToJSON(value?: PbsCfEnum | null): any {

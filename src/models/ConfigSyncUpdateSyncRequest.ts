@@ -201,7 +201,7 @@ export interface ConfigSyncUpdateSyncRequest {
      * @type {number}
      * @memberof ConfigSyncUpdateSyncRequest
      */
-    transferLast?: number;
+    transferLast?: bigint | string | number;
 
     /**
      * Unmount involved removable datastore after the sync job finishes. Requires 'run-on-mount' to be enabled.
@@ -320,7 +320,7 @@ export function ConfigSyncUpdateSyncRequestFromJSONTyped(json: any, ignoreDiscri
         
         'syncDirection': json['sync-direction'] == null ? undefined : PbsAdminSyncSyncDirectionEnumFromJSON(json['sync-direction']),
         
-        'transferLast': json['transfer-last'] == null ? undefined : json['transfer-last'],
+        'transferLast': json['transfer-last'] == null ? undefined : BigInt(json['transfer-last']),
         
         'unmountOnDone': json['unmount-on-done'] == null ? undefined : json['unmount-on-done'],
         
@@ -389,7 +389,7 @@ export function ConfigSyncUpdateSyncRequestToJSONTyped(value?: ConfigSyncUpdateS
         
         'sync-direction': PbsAdminSyncSyncDirectionEnumToJSON(value['syncDirection']),
         
-        'transfer-last': value['transferLast'],
+        'transfer-last': value['transferLast'] == null ? undefined : String(value['transferLast']),
         
         'unmount-on-done': value['unmountOnDone'],
         

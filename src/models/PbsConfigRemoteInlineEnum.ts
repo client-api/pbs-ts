@@ -42,7 +42,9 @@ export function PbsConfigRemoteInlineEnumFromJSON(json: any): PbsConfigRemoteInl
 }
 
 export function PbsConfigRemoteInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigRemoteInlineEnum {
+
     return json as PbsConfigRemoteInlineEnum;
+
 }
 
 export function PbsConfigRemoteInlineEnumToJSON(value?: PbsConfigRemoteInlineEnum | null): any {

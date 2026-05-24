@@ -40,7 +40,9 @@ export function PbsAdminTypeEnumFromJSON(json: any): PbsAdminTypeEnum {
 }
 
 export function PbsAdminTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsAdminTypeEnum {
+
     return json as PbsAdminTypeEnum;
+
 }
 
 export function PbsAdminTypeEnumToJSON(value?: PbsAdminTypeEnum | null): any {

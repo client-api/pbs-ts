@@ -25,21 +25,21 @@ export interface AdminDatastoreDeleteGroupsResponseData {
      * @type {number}
      * @memberof AdminDatastoreDeleteGroupsResponseData
      */
-    protectedSnapshots: number;
+    protectedSnapshots: bigint | string | number;
 
     /**
      * Number of entities
      * @type {number}
      * @memberof AdminDatastoreDeleteGroupsResponseData
      */
-    removedGroups: number;
+    removedGroups: bigint | string | number;
 
     /**
      * Number of entities
      * @type {number}
      * @memberof AdminDatastoreDeleteGroupsResponseData
      */
-    removedSnapshots: number;
+    removedSnapshots: bigint | string | number;
 
 }
 
@@ -68,11 +68,11 @@ export function AdminDatastoreDeleteGroupsResponseDataFromJSONTyped(json: any, i
     return {
         
         
-        'protectedSnapshots': json['protected-snapshots'],
+        'protectedSnapshots': BigInt(json['protected-snapshots']),
         
-        'removedGroups': json['removed-groups'],
+        'removedGroups': BigInt(json['removed-groups']),
         
-        'removedSnapshots': json['removed-snapshots'],
+        'removedSnapshots': BigInt(json['removed-snapshots']),
         
     };
 }
@@ -89,11 +89,11 @@ export function AdminDatastoreDeleteGroupsResponseDataToJSONTyped(value?: AdminD
     return {
         
         
-        'protected-snapshots': value['protectedSnapshots'],
+        'protected-snapshots': String(value['protectedSnapshots']),
         
-        'removed-groups': value['removedGroups'],
+        'removed-groups': String(value['removedGroups']),
         
-        'removed-snapshots': value['removedSnapshots'],
+        'removed-snapshots': String(value['removedSnapshots']),
         
     };
 }

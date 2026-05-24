@@ -68,7 +68,7 @@ export interface NodesDisksGetListResponseDataInnerPartitionsInner {
      * @type {number}
      * @memberof NodesDisksGetListResponseDataInnerPartitionsInner
      */
-    size?: number;
+    size?: bigint | string | number;
 
     /**
      * What a block device partition is used for.
@@ -129,7 +129,7 @@ export function NodesDisksGetListResponseDataInnerPartitionsInnerFromJSONTyped(j
         
         'name': json['name'],
         
-        'size': json['size'] == null ? undefined : json['size'],
+        'size': json['size'] == null ? undefined : BigInt(json['size']),
         
         'used': PbsNodesDisksUsedEnumFromJSON(json['used']),
         
@@ -160,7 +160,7 @@ export function NodesDisksGetListResponseDataInnerPartitionsInnerToJSONTyped(val
         
         'name': value['name'],
         
-        'size': value['size'],
+        'size': value['size'] == null ? undefined : String(value['size']),
         
         'used': PbsNodesDisksUsedEnumToJSON(value['used']),
         

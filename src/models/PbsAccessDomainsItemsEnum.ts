@@ -41,7 +41,9 @@ export function PbsAccessDomainsItemsEnumFromJSON(json: any): PbsAccessDomainsIt
 }
 
 export function PbsAccessDomainsItemsEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsAccessDomainsItemsEnum {
+
     return json as PbsAccessDomainsItemsEnum;
+
 }
 
 export function PbsAccessDomainsItemsEnumToJSON(value?: PbsAccessDomainsItemsEnum | null): any {

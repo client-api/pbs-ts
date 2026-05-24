@@ -89,7 +89,7 @@ export interface AdminSyncGetSyncResponseDataInner {
      * @type {number}
      * @memberof AdminSyncGetSyncResponseDataInner
      */
-    lastRunEndtime?: number;
+    lastRunEndtime?: bigint | string | number;
 
     /**
      * Result of the last run.
@@ -117,7 +117,7 @@ export interface AdminSyncGetSyncResponseDataInner {
      * @type {number}
      * @memberof AdminSyncGetSyncResponseDataInner
      */
-    nextRun?: number;
+    nextRun?: bigint | string | number;
 
     /**
      * Namespace.
@@ -215,7 +215,7 @@ export interface AdminSyncGetSyncResponseDataInner {
      * @type {number}
      * @memberof AdminSyncGetSyncResponseDataInner
      */
-    transferLast?: number;
+    transferLast?: bigint | string | number;
 
     /**
      * Unmount involved removable datastore after the sync job finishes. Requires 'run-on-mount' to be enabled.
@@ -310,7 +310,7 @@ export function AdminSyncGetSyncResponseDataInnerFromJSONTyped(json: any, ignore
         
         'id': json['id'],
         
-        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : json['last-run-endtime'],
+        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : BigInt(json['last-run-endtime']),
         
         'lastRunState': json['last-run-state'] == null ? undefined : json['last-run-state'],
         
@@ -318,7 +318,7 @@ export function AdminSyncGetSyncResponseDataInnerFromJSONTyped(json: any, ignore
         
         'maxDepth': json['max-depth'] == null ? undefined : json['max-depth'],
         
-        'nextRun': json['next-run'] == null ? undefined : json['next-run'],
+        'nextRun': json['next-run'] == null ? undefined : BigInt(json['next-run']),
         
         'ns': json['ns'] == null ? undefined : json['ns'],
         
@@ -346,7 +346,7 @@ export function AdminSyncGetSyncResponseDataInnerFromJSONTyped(json: any, ignore
         
         'syncDirection': json['sync-direction'] == null ? undefined : PbsAdminSyncSyncDirectionEnumFromJSON(json['sync-direction']),
         
-        'transferLast': json['transfer-last'] == null ? undefined : json['transfer-last'],
+        'transferLast': json['transfer-last'] == null ? undefined : BigInt(json['transfer-last']),
         
         'unmountOnDone': json['unmount-on-done'] == null ? undefined : json['unmount-on-done'],
         
@@ -385,7 +385,7 @@ export function AdminSyncGetSyncResponseDataInnerToJSONTyped(value?: AdminSyncGe
         
         'id': value['id'],
         
-        'last-run-endtime': value['lastRunEndtime'],
+        'last-run-endtime': value['lastRunEndtime'] == null ? undefined : String(value['lastRunEndtime']),
         
         'last-run-state': value['lastRunState'],
         
@@ -393,7 +393,7 @@ export function AdminSyncGetSyncResponseDataInnerToJSONTyped(value?: AdminSyncGe
         
         'max-depth': value['maxDepth'],
         
-        'next-run': value['nextRun'],
+        'next-run': value['nextRun'] == null ? undefined : String(value['nextRun']),
         
         'ns': value['ns'],
         
@@ -421,7 +421,7 @@ export function AdminSyncGetSyncResponseDataInnerToJSONTyped(value?: AdminSyncGe
         
         'sync-direction': PbsAdminSyncSyncDirectionEnumToJSON(value['syncDirection']),
         
-        'transfer-last': value['transferLast'],
+        'transfer-last': value['transferLast'] == null ? undefined : String(value['transferLast']),
         
         'unmount-on-done': value['unmountOnDone'],
         

@@ -45,7 +45,9 @@ export function PbsBondModeEnumFromJSON(json: any): PbsBondModeEnum {
 }
 
 export function PbsBondModeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsBondModeEnum {
+
     return json as PbsBondModeEnum;
+
 }
 
 export function PbsBondModeEnumToJSON(value?: PbsBondModeEnum | null): any {

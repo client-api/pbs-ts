@@ -43,7 +43,9 @@ export function PbsTapeMediaStatusEnumFromJSON(json: any): PbsTapeMediaStatusEnu
 }
 
 export function PbsTapeMediaStatusEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsTapeMediaStatusEnum {
+
     return json as PbsTapeMediaStatusEnum;
+
 }
 
 export function PbsTapeMediaStatusEnumToJSON(value?: PbsTapeMediaStatusEnum | null): any {

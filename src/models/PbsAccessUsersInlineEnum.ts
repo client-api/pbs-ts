@@ -42,7 +42,9 @@ export function PbsAccessUsersInlineEnumFromJSON(json: any): PbsAccessUsersInlin
 }
 
 export function PbsAccessUsersInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsAccessUsersInlineEnum {
+
     return json as PbsAccessUsersInlineEnum;
+
 }
 
 export function PbsAccessUsersInlineEnumToJSON(value?: PbsAccessUsersInlineEnum | null): any {

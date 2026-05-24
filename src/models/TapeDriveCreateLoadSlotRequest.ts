@@ -25,7 +25,7 @@ export interface TapeDriveCreateLoadSlotRequest {
      * @type {number}
      * @memberof TapeDriveCreateLoadSlotRequest
      */
-    sourceSlot: number;
+    sourceSlot: bigint | string | number;
 
 }
 
@@ -50,7 +50,7 @@ export function TapeDriveCreateLoadSlotRequestFromJSONTyped(json: any, ignoreDis
     return {
         
         
-        'sourceSlot': json['source-slot'],
+        'sourceSlot': BigInt(json['source-slot']),
         
     };
 }
@@ -67,7 +67,7 @@ export function TapeDriveCreateLoadSlotRequestToJSONTyped(value?: TapeDriveCreat
     return {
         
         
-        'source-slot': value['sourceSlot'],
+        'source-slot': String(value['sourceSlot']),
         
     };
 }

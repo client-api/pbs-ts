@@ -39,7 +39,7 @@ export interface AccessUsersGetTokenResponseDataInner {
      * @type {number}
      * @memberof AccessUsersGetTokenResponseDataInner
      */
-    expire?: number;
+    expire?: bigint | string | number;
 
     /**
      * The token ID part of an API token authentication id.
@@ -89,7 +89,7 @@ export function AccessUsersGetTokenResponseDataInnerFromJSONTyped(json: any, ign
         
         'enable': json['enable'] == null ? undefined : json['enable'],
         
-        'expire': json['expire'] == null ? undefined : json['expire'],
+        'expire': json['expire'] == null ? undefined : BigInt(json['expire']),
         
         'tokenName': json['token-name'],
         
@@ -114,7 +114,7 @@ export function AccessUsersGetTokenResponseDataInnerToJSONTyped(value?: AccessUs
         
         'enable': value['enable'],
         
-        'expire': value['expire'],
+        'expire': value['expire'] == null ? undefined : String(value['expire']),
         
         'token-name': value['tokenName'],
         

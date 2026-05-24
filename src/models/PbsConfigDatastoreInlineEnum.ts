@@ -56,7 +56,9 @@ export function PbsConfigDatastoreInlineEnumFromJSON(json: any): PbsConfigDatast
 }
 
 export function PbsConfigDatastoreInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigDatastoreInlineEnum {
+
     return json as PbsConfigDatastoreInlineEnum;
+
 }
 
 export function PbsConfigDatastoreInlineEnumToJSON(value?: PbsConfigDatastoreInlineEnum | null): any {

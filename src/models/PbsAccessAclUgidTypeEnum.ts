@@ -40,7 +40,9 @@ export function PbsAccessAclUgidTypeEnumFromJSON(json: any): PbsAccessAclUgidTyp
 }
 
 export function PbsAccessAclUgidTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsAccessAclUgidTypeEnum {
+
     return json as PbsAccessAclUgidTypeEnum;
+
 }
 
 export function PbsAccessAclUgidTypeEnumToJSON(value?: PbsAccessAclUgidTypeEnum | null): any {

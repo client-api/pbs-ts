@@ -60,7 +60,9 @@ export function PbsConfigSyncInlineEnumFromJSON(json: any): PbsConfigSyncInlineE
 }
 
 export function PbsConfigSyncInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigSyncInlineEnum {
+
     return json as PbsConfigSyncInlineEnum;
+
 }
 
 export function PbsConfigSyncInlineEnumToJSON(value?: PbsConfigSyncInlineEnum | null): any {

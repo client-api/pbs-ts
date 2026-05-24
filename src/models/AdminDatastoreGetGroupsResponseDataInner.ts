@@ -33,7 +33,7 @@ export interface AdminDatastoreGetGroupsResponseDataInner {
      * @type {number}
      * @memberof AdminDatastoreGetGroupsResponseDataInner
      */
-    backupCount: number;
+    backupCount: bigint | string | number;
 
     /**
      * Backup ID.
@@ -68,7 +68,7 @@ export interface AdminDatastoreGetGroupsResponseDataInner {
      * @type {number}
      * @memberof AdminDatastoreGetGroupsResponseDataInner
      */
-    lastBackup: number;
+    lastBackup: bigint | string | number;
 
     /**
      * Authentication ID
@@ -112,7 +112,7 @@ export function AdminDatastoreGetGroupsResponseDataInnerFromJSONTyped(json: any,
     return {
         
         
-        'backupCount': json['backup-count'],
+        'backupCount': BigInt(json['backup-count']),
         
         'backupId': json['backup-id'],
         
@@ -122,7 +122,7 @@ export function AdminDatastoreGetGroupsResponseDataInnerFromJSONTyped(json: any,
         
         'files': json['files'],
         
-        'lastBackup': json['last-backup'],
+        'lastBackup': BigInt(json['last-backup']),
         
         'owner': json['owner'] == null ? undefined : json['owner'],
         
@@ -141,7 +141,7 @@ export function AdminDatastoreGetGroupsResponseDataInnerToJSONTyped(value?: Admi
     return {
         
         
-        'backup-count': value['backupCount'],
+        'backup-count': String(value['backupCount']),
         
         'backup-id': value['backupId'],
         
@@ -151,7 +151,7 @@ export function AdminDatastoreGetGroupsResponseDataInnerToJSONTyped(value?: Admi
         
         'files': value['files'],
         
-        'last-backup': value['lastBackup'],
+        'last-backup': String(value['lastBackup']),
         
         'owner': value['owner'],
         

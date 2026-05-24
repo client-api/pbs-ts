@@ -45,7 +45,9 @@ export function PbsNodesDisksCompressionEnumFromJSON(json: any): PbsNodesDisksCo
 }
 
 export function PbsNodesDisksCompressionEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesDisksCompressionEnum {
+
     return json as PbsNodesDisksCompressionEnum;
+
 }
 
 export function PbsNodesDisksCompressionEnumToJSON(value?: PbsNodesDisksCompressionEnum | null): any {

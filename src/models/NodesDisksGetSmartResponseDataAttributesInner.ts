@@ -32,7 +32,7 @@ export interface NodesDisksGetSmartResponseDataAttributesInner {
      * @type {number}
      * @memberof NodesDisksGetSmartResponseDataAttributesInner
      */
-    id?: number;
+    id?: bigint | string | number;
 
     /**
      * Attribute name
@@ -110,7 +110,7 @@ export function NodesDisksGetSmartResponseDataAttributesInnerFromJSONTyped(json:
         
         'flags': json['flags'] == null ? undefined : json['flags'],
         
-        'id': json['id'] == null ? undefined : json['id'],
+        'id': json['id'] == null ? undefined : BigInt(json['id']),
         
         'name': json['name'],
         
@@ -141,7 +141,7 @@ export function NodesDisksGetSmartResponseDataAttributesInnerToJSONTyped(value?:
         
         'flags': value['flags'],
         
-        'id': value['id'],
+        'id': value['id'] == null ? undefined : String(value['id']),
         
         'name': value['name'],
         

@@ -46,7 +46,9 @@ export function PbsConfigNotificationsInlineEnum3FromJSON(json: any): PbsConfigN
 }
 
 export function PbsConfigNotificationsInlineEnum3FromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigNotificationsInlineEnum3 {
+
     return json as PbsConfigNotificationsInlineEnum3;
+
 }
 
 export function PbsConfigNotificationsInlineEnum3ToJSON(value?: PbsConfigNotificationsInlineEnum3 | null): any {

@@ -43,7 +43,9 @@ export function PbsConfigMediaPoolInlineEnumFromJSON(json: any): PbsConfigMediaP
 }
 
 export function PbsConfigMediaPoolInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigMediaPoolInlineEnum {
+
     return json as PbsConfigMediaPoolInlineEnum;
+
 }
 
 export function PbsConfigMediaPoolInlineEnumToJSON(value?: PbsConfigMediaPoolInlineEnum | null): any {

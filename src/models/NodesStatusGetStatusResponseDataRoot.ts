@@ -25,21 +25,21 @@ export interface NodesStatusGetStatusResponseDataRoot {
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataRoot
      */
-    avail: number;
+    avail: bigint | string | number;
 
     /**
      * Total space (bytes).
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataRoot
      */
-    total: number;
+    total: bigint | string | number;
 
     /**
      * Used space (bytes).
      * @type {number}
      * @memberof NodesStatusGetStatusResponseDataRoot
      */
-    used: number;
+    used: bigint | string | number;
 
 }
 
@@ -68,11 +68,11 @@ export function NodesStatusGetStatusResponseDataRootFromJSONTyped(json: any, ign
     return {
         
         
-        'avail': json['avail'],
+        'avail': BigInt(json['avail']),
         
-        'total': json['total'],
+        'total': BigInt(json['total']),
         
-        'used': json['used'],
+        'used': BigInt(json['used']),
         
     };
 }
@@ -89,11 +89,11 @@ export function NodesStatusGetStatusResponseDataRootToJSONTyped(value?: NodesSta
     return {
         
         
-        'avail': value['avail'],
+        'avail': String(value['avail']),
         
-        'total': value['total'],
+        'total': String(value['total']),
         
-        'used': value['used'],
+        'used': String(value['used']),
         
     };
 }

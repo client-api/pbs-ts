@@ -25,7 +25,7 @@ export interface NodesAptGetRepositoriesResponseDataInfosInner {
      * @type {number}
      * @memberof NodesAptGetRepositoriesResponseDataInfosInner
      */
-    index: number;
+    index: bigint | string | number;
 
     /**
      * Info kind (e.g. "warning")
@@ -85,7 +85,7 @@ export function NodesAptGetRepositoriesResponseDataInfosInnerFromJSONTyped(json:
     return {
         
         
-        'index': json['index'],
+        'index': BigInt(json['index']),
         
         'kind': json['kind'],
         
@@ -110,7 +110,7 @@ export function NodesAptGetRepositoriesResponseDataInfosInnerToJSONTyped(value?:
     return {
         
         
-        'index': value['index'],
+        'index': String(value['index']),
         
         'kind': value['kind'],
         

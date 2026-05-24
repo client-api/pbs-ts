@@ -67,7 +67,7 @@ export interface ConfigRemoteCreateRemoteRequest {
      * @type {number}
      * @memberof ConfigRemoteCreateRemoteRequest
      */
-    port?: number;
+    port?: bigint | string | number;
 
     /**
      * Use the http proxy configuration of the node for remote connections.
@@ -121,7 +121,7 @@ export function ConfigRemoteCreateRemoteRequestFromJSONTyped(json: any, ignoreDi
         
         'password': json['password'],
         
-        'port': json['port'] == null ? undefined : json['port'],
+        'port': json['port'] == null ? undefined : BigInt(json['port']),
         
         'useNodeProxy': json['use-node-proxy'] == null ? undefined : json['use-node-proxy'],
         
@@ -152,7 +152,7 @@ export function ConfigRemoteCreateRemoteRequestToJSONTyped(value?: ConfigRemoteC
         
         'password': value['password'],
         
-        'port': value['port'],
+        'port': value['port'] == null ? undefined : String(value['port']),
         
         'use-node-proxy': value['useNodeProxy'],
         

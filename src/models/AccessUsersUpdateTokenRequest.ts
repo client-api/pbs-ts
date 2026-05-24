@@ -61,7 +61,7 @@ export interface AccessUsersUpdateTokenRequest {
      * @type {number}
      * @memberof AccessUsersUpdateTokenRequest
      */
-    expire?: number;
+    expire?: bigint | string | number;
 
     /**
      * Regenerate token secret while keeping permissions.
@@ -105,7 +105,7 @@ export function AccessUsersUpdateTokenRequestFromJSONTyped(json: any, ignoreDisc
         
         'enable': json['enable'] == null ? undefined : json['enable'],
         
-        'expire': json['expire'] == null ? undefined : json['expire'],
+        'expire': json['expire'] == null ? undefined : BigInt(json['expire']),
         
         'regenerate': json['regenerate'] == null ? undefined : json['regenerate'],
         
@@ -132,7 +132,7 @@ export function AccessUsersUpdateTokenRequestToJSONTyped(value?: AccessUsersUpda
         
         'enable': value['enable'],
         
-        'expire': value['expire'],
+        'expire': value['expire'] == null ? undefined : String(value['expire']),
         
         'regenerate': value['regenerate'],
         

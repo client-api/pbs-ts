@@ -46,7 +46,7 @@ export interface AccessUsersGetAccessUsersByUseridResponseData {
      * @type {number}
      * @memberof AccessUsersGetAccessUsersByUseridResponseData
      */
-    expire?: number;
+    expire?: bigint | string | number;
 
     /**
      * First name.
@@ -104,7 +104,7 @@ export function AccessUsersGetAccessUsersByUseridResponseDataFromJSONTyped(json:
         
         'enable': json['enable'] == null ? undefined : json['enable'],
         
-        'expire': json['expire'] == null ? undefined : json['expire'],
+        'expire': json['expire'] == null ? undefined : BigInt(json['expire']),
         
         'firstname': json['firstname'] == null ? undefined : json['firstname'],
         
@@ -133,7 +133,7 @@ export function AccessUsersGetAccessUsersByUseridResponseDataToJSONTyped(value?:
         
         'enable': value['enable'],
         
-        'expire': value['expire'],
+        'expire': value['expire'] == null ? undefined : String(value['expire']),
         
         'firstname': value['firstname'],
         

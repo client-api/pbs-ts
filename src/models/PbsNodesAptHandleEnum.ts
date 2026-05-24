@@ -44,7 +44,9 @@ export function PbsNodesAptHandleEnumFromJSON(json: any): PbsNodesAptHandleEnum 
 }
 
 export function PbsNodesAptHandleEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesAptHandleEnum {
+
     return json as PbsNodesAptHandleEnum;
+
 }
 
 export function PbsNodesAptHandleEnumToJSON(value?: PbsNodesAptHandleEnum | null): any {

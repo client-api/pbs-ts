@@ -123,7 +123,7 @@ export interface PushCreatePushRequest {
      * @type {number}
      * @memberof PushCreatePushRequest
      */
-    transferLast?: number;
+    transferLast?: bigint | string | number;
 
     /**
      * Only synchronize verified backup snapshots, exclude others.
@@ -208,7 +208,7 @@ export function PushCreatePushRequestFromJSONTyped(json: any, ignoreDiscriminato
         
         'store': json['store'],
         
-        'transferLast': json['transfer-last'] == null ? undefined : json['transfer-last'],
+        'transferLast': json['transfer-last'] == null ? undefined : BigInt(json['transfer-last']),
         
         'verifiedOnly': json['verified-only'] == null ? undefined : json['verified-only'],
         
@@ -257,7 +257,7 @@ export function PushCreatePushRequestToJSONTyped(value?: PushCreatePushRequest |
         
         'store': value['store'],
         
-        'transfer-last': value['transferLast'],
+        'transfer-last': value['transferLast'] == null ? undefined : String(value['transferLast']),
         
         'verified-only': value['verifiedOnly'],
         

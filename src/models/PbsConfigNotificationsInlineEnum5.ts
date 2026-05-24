@@ -46,7 +46,9 @@ export function PbsConfigNotificationsInlineEnum5FromJSON(json: any): PbsConfigN
 }
 
 export function PbsConfigNotificationsInlineEnum5FromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigNotificationsInlineEnum5 {
+
     return json as PbsConfigNotificationsInlineEnum5;
+
 }
 
 export function PbsConfigNotificationsInlineEnum5ToJSON(value?: PbsConfigNotificationsInlineEnum5 | null): any {

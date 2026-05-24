@@ -25,14 +25,14 @@ export interface TapeChangerCreateTransferRequest {
      * @type {number}
      * @memberof TapeChangerCreateTransferRequest
      */
-    from: number;
+    from: bigint | string | number;
 
     /**
      * Destination slot number
      * @type {number}
      * @memberof TapeChangerCreateTransferRequest
      */
-    to: number;
+    to: bigint | string | number;
 
 }
 
@@ -59,9 +59,9 @@ export function TapeChangerCreateTransferRequestFromJSONTyped(json: any, ignoreD
     return {
         
         
-        'from': json['from'],
+        'from': BigInt(json['from']),
         
-        'to': json['to'],
+        'to': BigInt(json['to']),
         
     };
 }
@@ -78,9 +78,9 @@ export function TapeChangerCreateTransferRequestToJSONTyped(value?: TapeChangerC
     return {
         
         
-        'from': value['from'],
+        'from': String(value['from']),
         
-        'to': value['to'],
+        'to': String(value['to']),
         
     };
 }

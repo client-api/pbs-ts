@@ -33,7 +33,7 @@ export interface TapeMediaGetListResponseDataInner {
      * @type {number}
      * @memberof TapeMediaGetListResponseDataInner
      */
-    bytesUsed?: number;
+    bytesUsed?: bigint | string | number;
 
     /**
      * Catalog status OK
@@ -47,7 +47,7 @@ export interface TapeMediaGetListResponseDataInner {
      * @type {number}
      * @memberof TapeMediaGetListResponseDataInner
      */
-    ctime: number;
+    ctime: bigint | string | number;
 
     /**
      * Expired flag
@@ -75,7 +75,7 @@ export interface TapeMediaGetListResponseDataInner {
      * @type {number}
      * @memberof TapeMediaGetListResponseDataInner
      */
-    mediaSetCtime?: number;
+    mediaSetCtime?: bigint | string | number;
 
     /**
      * Media set name
@@ -103,7 +103,7 @@ export interface TapeMediaGetListResponseDataInner {
      * @type {number}
      * @memberof TapeMediaGetListResponseDataInner
      */
-    seqNr?: number;
+    seqNr?: bigint | string | number;
 
     /**
      * Media status
@@ -163,11 +163,11 @@ export function TapeMediaGetListResponseDataInnerFromJSONTyped(json: any, ignore
     return {
         
         
-        'bytesUsed': json['bytes-used'] == null ? undefined : json['bytes-used'],
+        'bytesUsed': json['bytes-used'] == null ? undefined : BigInt(json['bytes-used']),
         
         'catalog': json['catalog'],
         
-        'ctime': json['ctime'],
+        'ctime': BigInt(json['ctime']),
         
         'expired': json['expired'],
         
@@ -175,7 +175,7 @@ export function TapeMediaGetListResponseDataInnerFromJSONTyped(json: any, ignore
         
         'location': json['location'],
         
-        'mediaSetCtime': json['media-set-ctime'] == null ? undefined : json['media-set-ctime'],
+        'mediaSetCtime': json['media-set-ctime'] == null ? undefined : BigInt(json['media-set-ctime']),
         
         'mediaSetName': json['media-set-name'] == null ? undefined : json['media-set-name'],
         
@@ -183,7 +183,7 @@ export function TapeMediaGetListResponseDataInnerFromJSONTyped(json: any, ignore
         
         'pool': json['pool'] == null ? undefined : json['pool'],
         
-        'seqNr': json['seq-nr'] == null ? undefined : json['seq-nr'],
+        'seqNr': json['seq-nr'] == null ? undefined : BigInt(json['seq-nr']),
         
         'status': PbsTapeMediaStatusEnumFromJSON(json['status']),
         
@@ -204,11 +204,11 @@ export function TapeMediaGetListResponseDataInnerToJSONTyped(value?: TapeMediaGe
     return {
         
         
-        'bytes-used': value['bytesUsed'],
+        'bytes-used': value['bytesUsed'] == null ? undefined : String(value['bytesUsed']),
         
         'catalog': value['catalog'],
         
-        'ctime': value['ctime'],
+        'ctime': String(value['ctime']),
         
         'expired': value['expired'],
         
@@ -216,7 +216,7 @@ export function TapeMediaGetListResponseDataInnerToJSONTyped(value?: TapeMediaGe
         
         'location': value['location'],
         
-        'media-set-ctime': value['mediaSetCtime'],
+        'media-set-ctime': value['mediaSetCtime'] == null ? undefined : String(value['mediaSetCtime']),
         
         'media-set-name': value['mediaSetName'],
         
@@ -224,7 +224,7 @@ export function TapeMediaGetListResponseDataInnerToJSONTyped(value?: TapeMediaGe
         
         'pool': value['pool'],
         
-        'seq-nr': value['seqNr'],
+        'seq-nr': value['seqNr'] == null ? undefined : String(value['seqNr']),
         
         'status': PbsTapeMediaStatusEnumToJSON(value['status']),
         

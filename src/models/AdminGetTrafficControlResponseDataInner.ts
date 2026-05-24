@@ -46,14 +46,14 @@ export interface AdminGetTrafficControlResponseDataInner {
      * @type {number}
      * @memberof AdminGetTrafficControlResponseDataInner
      */
-    curRateIn: number;
+    curRateIn: bigint | string | number;
 
     /**
      * Current egress rate in bytes/second
      * @type {number}
      * @memberof AdminGetTrafficControlResponseDataInner
      */
-    curRateOut: number;
+    curRateOut: bigint | string | number;
 
     /**
      * Rule ID.
@@ -139,9 +139,9 @@ export function AdminGetTrafficControlResponseDataInnerFromJSONTyped(json: any, 
         
         'comment': json['comment'] == null ? undefined : json['comment'],
         
-        'curRateIn': json['cur-rate-in'],
+        'curRateIn': BigInt(json['cur-rate-in']),
         
-        'curRateOut': json['cur-rate-out'],
+        'curRateOut': BigInt(json['cur-rate-out']),
         
         'name': json['name'],
         
@@ -176,9 +176,9 @@ export function AdminGetTrafficControlResponseDataInnerToJSONTyped(value?: Admin
         
         'comment': value['comment'],
         
-        'cur-rate-in': value['curRateIn'],
+        'cur-rate-in': String(value['curRateIn']),
         
-        'cur-rate-out': value['curRateOut'],
+        'cur-rate-out': String(value['curRateOut']),
         
         'name': value['name'],
         

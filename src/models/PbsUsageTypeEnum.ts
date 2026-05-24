@@ -45,7 +45,9 @@ export function PbsUsageTypeEnumFromJSON(json: any): PbsUsageTypeEnum {
 }
 
 export function PbsUsageTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsUsageTypeEnum {
+
     return json as PbsUsageTypeEnum;
+
 }
 
 export function PbsUsageTypeEnumToJSON(value?: PbsUsageTypeEnum | null): any {

@@ -40,7 +40,9 @@ export function PbsConfigNotificationsInlineEnumFromJSON(json: any): PbsConfigNo
 }
 
 export function PbsConfigNotificationsInlineEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigNotificationsInlineEnum {
+
     return json as PbsConfigNotificationsInlineEnum;
+
 }
 
 export function PbsConfigNotificationsInlineEnumToJSON(value?: PbsConfigNotificationsInlineEnum | null): any {

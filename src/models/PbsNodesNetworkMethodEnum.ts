@@ -42,7 +42,9 @@ export function PbsNodesNetworkMethodEnumFromJSON(json: any): PbsNodesNetworkMet
 }
 
 export function PbsNodesNetworkMethodEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesNetworkMethodEnum {
+
     return json as PbsNodesNetworkMethodEnum;
+
 }
 
 export function PbsNodesNetworkMethodEnumToJSON(value?: PbsNodesNetworkMethodEnum | null): any {

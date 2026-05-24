@@ -33,14 +33,14 @@ export interface ConfigEncryptionKeysGetEncryptionKeysResponseDataInner {
      * @type {number}
      * @memberof ConfigEncryptionKeysGetEncryptionKeysResponseDataInner
      */
-    archivedAt?: number;
+    archivedAt?: bigint | string | number;
 
     /**
      * Key creation time
      * @type {number}
      * @memberof ConfigEncryptionKeysGetEncryptionKeysResponseDataInner
      */
-    created: number;
+    created: bigint | string | number;
 
     /**
      * X509 certificate fingerprint (sha256).
@@ -75,7 +75,7 @@ export interface ConfigEncryptionKeysGetEncryptionKeysResponseDataInner {
      * @type {number}
      * @memberof ConfigEncryptionKeysGetEncryptionKeysResponseDataInner
      */
-    modified: number;
+    modified: bigint | string | number;
 
     /**
      * Path to key (if stored in a file)
@@ -119,9 +119,9 @@ export function ConfigEncryptionKeysGetEncryptionKeysResponseDataInnerFromJSONTy
     return {
         
         
-        'archivedAt': json['archived-at'] == null ? undefined : json['archived-at'],
+        'archivedAt': json['archived-at'] == null ? undefined : BigInt(json['archived-at']),
         
-        'created': json['created'],
+        'created': BigInt(json['created']),
         
         'fingerprint': json['fingerprint'] == null ? undefined : json['fingerprint'],
         
@@ -131,7 +131,7 @@ export function ConfigEncryptionKeysGetEncryptionKeysResponseDataInnerFromJSONTy
         
         'kdf': PbsKdfEnumFromJSON(json['kdf']),
         
-        'modified': json['modified'],
+        'modified': BigInt(json['modified']),
         
         'path': json['path'] == null ? undefined : json['path'],
         
@@ -150,9 +150,9 @@ export function ConfigEncryptionKeysGetEncryptionKeysResponseDataInnerToJSONType
     return {
         
         
-        'archived-at': value['archivedAt'],
+        'archived-at': value['archivedAt'] == null ? undefined : String(value['archivedAt']),
         
-        'created': value['created'],
+        'created': String(value['created']),
         
         'fingerprint': value['fingerprint'],
         
@@ -162,7 +162,7 @@ export function ConfigEncryptionKeysGetEncryptionKeysResponseDataInnerToJSONType
         
         'kdf': PbsKdfEnumToJSON(value['kdf']),
         
-        'modified': value['modified'],
+        'modified': String(value['modified']),
         
         'path': value['path'],
         

@@ -43,7 +43,9 @@ export function PbsAccessTfaTypeEnumFromJSON(json: any): PbsAccessTfaTypeEnum {
 }
 
 export function PbsAccessTfaTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsAccessTfaTypeEnum {
+
     return json as PbsAccessTfaTypeEnum;
+
 }
 
 export function PbsAccessTfaTypeEnumToJSON(value?: PbsAccessTfaTypeEnum | null): any {

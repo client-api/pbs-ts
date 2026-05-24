@@ -41,7 +41,9 @@ export function PbsKdfEnumFromJSON(json: any): PbsKdfEnum {
 }
 
 export function PbsKdfEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsKdfEnum {
+
     return json as PbsKdfEnum;
+
 }
 
 export function PbsKdfEnumToJSON(value?: PbsKdfEnum | null): any {

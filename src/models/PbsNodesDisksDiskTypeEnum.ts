@@ -42,7 +42,9 @@ export function PbsNodesDisksDiskTypeEnumFromJSON(json: any): PbsNodesDisksDiskT
 }
 
 export function PbsNodesDisksDiskTypeEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesDisksDiskTypeEnum {
+
     return json as PbsNodesDisksDiskTypeEnum;
+
 }
 
 export function PbsNodesDisksDiskTypeEnumToJSON(value?: PbsNodesDisksDiskTypeEnum | null): any {

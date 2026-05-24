@@ -40,7 +40,7 @@ export interface AdminDatastoreUpdateProtectedRequest {
      * @type {number}
      * @memberof AdminDatastoreUpdateProtectedRequest
      */
-    backupTime: number;
+    backupTime: bigint | string | number;
 
     /**
      * Backup types.
@@ -97,7 +97,7 @@ export function AdminDatastoreUpdateProtectedRequestFromJSONTyped(json: any, ign
         
         'backupId': json['backup-id'],
         
-        'backupTime': json['backup-time'],
+        'backupTime': BigInt(json['backup-time']),
         
         'backupType': PbsBackupTypeEnumFromJSON(json['backup-type']),
         
@@ -122,7 +122,7 @@ export function AdminDatastoreUpdateProtectedRequestToJSONTyped(value?: AdminDat
         
         'backup-id': value['backupId'],
         
-        'backup-time': value['backupTime'],
+        'backup-time': String(value['backupTime']),
         
         'backup-type': PbsBackupTypeEnumToJSON(value['backupType']),
         

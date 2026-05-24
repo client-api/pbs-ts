@@ -33,3 +33,10 @@ vitest.config.ts
 docker-compose.yml
 pnpm-lock.yaml
 .openapi-generator-ignore
+
+# Hand-managed config — the generator's defaults clobber e2e additions
+# every time. Pin them so regen+sync preserves the suite end-to-end.
+package.json
+tsconfig.json
+.gitignore
+tests/

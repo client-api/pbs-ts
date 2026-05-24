@@ -33,7 +33,7 @@ export interface NodesSubscriptionGetSubscriptionResponseData {
      * @type {number}
      * @memberof NodesSubscriptionGetSubscriptionResponseData
      */
-    checktime?: number;
+    checktime?: bigint | string | number;
 
     /**
      * the subscription key, if set and permitted to access
@@ -132,7 +132,7 @@ export function NodesSubscriptionGetSubscriptionResponseDataFromJSONTyped(json: 
     return {
         
         
-        'checktime': json['checktime'] == null ? undefined : json['checktime'],
+        'checktime': json['checktime'] == null ? undefined : BigInt(json['checktime']),
         
         'key': json['key'] == null ? undefined : json['key'],
         
@@ -167,7 +167,7 @@ export function NodesSubscriptionGetSubscriptionResponseDataToJSONTyped(value?: 
     return {
         
         
-        'checktime': value['checktime'],
+        'checktime': value['checktime'] == null ? undefined : String(value['checktime']),
         
         'key': value['key'],
         

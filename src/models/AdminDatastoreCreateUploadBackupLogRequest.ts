@@ -40,7 +40,7 @@ export interface AdminDatastoreCreateUploadBackupLogRequest {
      * @type {number}
      * @memberof AdminDatastoreCreateUploadBackupLogRequest
      */
-    backupTime: number;
+    backupTime: bigint | string | number;
 
     /**
      * Backup type.
@@ -88,7 +88,7 @@ export function AdminDatastoreCreateUploadBackupLogRequestFromJSONTyped(json: an
         
         'backupId': json['backup-id'],
         
-        'backupTime': json['backup-time'],
+        'backupTime': BigInt(json['backup-time']),
         
         'backupType': PbsBackupTypeEnumFromJSON(json['backup-type']),
         
@@ -111,7 +111,7 @@ export function AdminDatastoreCreateUploadBackupLogRequestToJSONTyped(value?: Ad
         
         'backup-id': value['backupId'],
         
-        'backup-time': value['backupTime'],
+        'backup-time': String(value['backupTime']),
         
         'backup-type': PbsBackupTypeEnumToJSON(value['backupType']),
         

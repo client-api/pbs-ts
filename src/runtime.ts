@@ -177,7 +177,11 @@ export class BaseAPI {
             || isBlob(overriddenInit.body)) {
           body = overriddenInit.body;
         } else if (this.isJsonMime(headers['Content-Type'])) {
-          body = JSON.stringify(overriddenInit.body);
+          // BigInt is not natively JSON-serializable — serialise as a numeric
+          // string so PVE/PBS/PMG/PDM (which accept both number and string for
+          // int64 fields) round-trip large counters without precision loss.
+          body = JSON.stringify(overriddenInit.body, (_key, value) =>
+            typeof value === 'bigint' ? value.toString() : value);
         } else {
           body = overriddenInit.body;
         }

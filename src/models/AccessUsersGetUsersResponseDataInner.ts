@@ -54,7 +54,7 @@ export interface AccessUsersGetUsersResponseDataInner {
      * @type {number}
      * @memberof AccessUsersGetUsersResponseDataInner
      */
-    expire?: number;
+    expire?: bigint | string | number;
 
     /**
      * First name.
@@ -75,7 +75,7 @@ export interface AccessUsersGetUsersResponseDataInner {
      * @type {number}
      * @memberof AccessUsersGetUsersResponseDataInner
      */
-    tfaLockedUntil?: number;
+    tfaLockedUntil?: bigint | string | number;
 
     /**
      * List of user's API tokens.
@@ -136,13 +136,13 @@ export function AccessUsersGetUsersResponseDataInnerFromJSONTyped(json: any, ign
         
         'enable': json['enable'] == null ? undefined : json['enable'],
         
-        'expire': json['expire'] == null ? undefined : json['expire'],
+        'expire': json['expire'] == null ? undefined : BigInt(json['expire']),
         
         'firstname': json['firstname'] == null ? undefined : json['firstname'],
         
         'lastname': json['lastname'] == null ? undefined : json['lastname'],
         
-        'tfaLockedUntil': json['tfa-locked-until'] == null ? undefined : json['tfa-locked-until'],
+        'tfaLockedUntil': json['tfa-locked-until'] == null ? undefined : BigInt(json['tfa-locked-until']),
         
         'tokens': json['tokens'] == null ? undefined : ((json['tokens'] as Array<any>).map(AccessUsersGetUsersResponseDataInnerTokensInnerFromJSON)),
         
@@ -171,13 +171,13 @@ export function AccessUsersGetUsersResponseDataInnerToJSONTyped(value?: AccessUs
         
         'enable': value['enable'],
         
-        'expire': value['expire'],
+        'expire': value['expire'] == null ? undefined : String(value['expire']),
         
         'firstname': value['firstname'],
         
         'lastname': value['lastname'],
         
-        'tfa-locked-until': value['tfaLockedUntil'],
+        'tfa-locked-until': value['tfaLockedUntil'] == null ? undefined : String(value['tfaLockedUntil']),
         
         'tokens': value['tokens'] == null ? undefined : ((value['tokens'] as Array<any>).map(AccessUsersGetUsersResponseDataInnerTokensInnerToJSON)),
         

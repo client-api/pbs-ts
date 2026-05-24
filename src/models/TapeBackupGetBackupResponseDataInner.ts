@@ -75,7 +75,7 @@ export interface TapeBackupGetBackupResponseDataInner {
      * @type {number}
      * @memberof TapeBackupGetBackupResponseDataInner
      */
-    lastRunEndtime?: number;
+    lastRunEndtime?: bigint | string | number;
 
     /**
      * Result of the last run.
@@ -117,7 +117,7 @@ export interface TapeBackupGetBackupResponseDataInner {
      * @type {number}
      * @memberof TapeBackupGetBackupResponseDataInner
      */
-    nextRun?: number;
+    nextRun?: bigint | string | number;
 
     /**
      * Configure how notifications for this datastore should be sent.
@@ -231,7 +231,7 @@ export function TapeBackupGetBackupResponseDataInnerFromJSONTyped(json: any, ign
         
         'id': json['id'],
         
-        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : json['last-run-endtime'],
+        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : BigInt(json['last-run-endtime']),
         
         'lastRunState': json['last-run-state'] == null ? undefined : json['last-run-state'],
         
@@ -243,7 +243,7 @@ export function TapeBackupGetBackupResponseDataInnerFromJSONTyped(json: any, ign
         
         'nextMediaLabel': json['next-media-label'] == null ? undefined : json['next-media-label'],
         
-        'nextRun': json['next-run'] == null ? undefined : json['next-run'],
+        'nextRun': json['next-run'] == null ? undefined : BigInt(json['next-run']),
         
         'notificationMode': json['notification-mode'] == null ? undefined : PbsNotificationModeEnumFromJSON(json['notification-mode']),
         
@@ -286,7 +286,7 @@ export function TapeBackupGetBackupResponseDataInnerToJSONTyped(value?: TapeBack
         
         'id': value['id'],
         
-        'last-run-endtime': value['lastRunEndtime'],
+        'last-run-endtime': value['lastRunEndtime'] == null ? undefined : String(value['lastRunEndtime']),
         
         'last-run-state': value['lastRunState'],
         
@@ -298,7 +298,7 @@ export function TapeBackupGetBackupResponseDataInnerToJSONTyped(value?: TapeBack
         
         'next-media-label': value['nextMediaLabel'],
         
-        'next-run': value['nextRun'],
+        'next-run': value['nextRun'] == null ? undefined : String(value['nextRun']),
         
         'notification-mode': PbsNotificationModeEnumToJSON(value['notificationMode']),
         

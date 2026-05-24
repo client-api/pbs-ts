@@ -33,7 +33,7 @@ export interface TapeChangerGetStatusResponseDataInner {
      * @type {number}
      * @memberof TapeChangerGetStatusResponseDataInner
      */
-    entryId: number;
+    entryId: bigint | string | number;
 
     /**
      * Mtx Entry Kind
@@ -54,7 +54,7 @@ export interface TapeChangerGetStatusResponseDataInner {
      * @type {number}
      * @memberof TapeChangerGetStatusResponseDataInner
      */
-    loadedSlot?: number;
+    loadedSlot?: bigint | string | number;
 
     /**
      * The current state of the drive
@@ -93,13 +93,13 @@ export function TapeChangerGetStatusResponseDataInnerFromJSONTyped(json: any, ig
     return {
         
         
-        'entryId': json['entry-id'],
+        'entryId': BigInt(json['entry-id']),
         
         'entryKind': PbsTapeChangerEntryKindEnumFromJSON(json['entry-kind']),
         
         'labelText': json['label-text'] == null ? undefined : json['label-text'],
         
-        'loadedSlot': json['loaded-slot'] == null ? undefined : json['loaded-slot'],
+        'loadedSlot': json['loaded-slot'] == null ? undefined : BigInt(json['loaded-slot']),
         
         'state': json['state'] == null ? undefined : json['state'],
         
@@ -118,13 +118,13 @@ export function TapeChangerGetStatusResponseDataInnerToJSONTyped(value?: TapeCha
     return {
         
         
-        'entry-id': value['entryId'],
+        'entry-id': String(value['entryId']),
         
         'entry-kind': PbsTapeChangerEntryKindEnumToJSON(value['entryKind']),
         
         'label-text': value['labelText'],
         
-        'loaded-slot': value['loadedSlot'],
+        'loaded-slot': value['loadedSlot'] == null ? undefined : String(value['loadedSlot']),
         
         'state': value['state'],
         

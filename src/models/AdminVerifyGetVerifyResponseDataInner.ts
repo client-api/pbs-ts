@@ -46,7 +46,7 @@ export interface AdminVerifyGetVerifyResponseDataInner {
      * @type {number}
      * @memberof AdminVerifyGetVerifyResponseDataInner
      */
-    lastRunEndtime?: number;
+    lastRunEndtime?: bigint | string | number;
 
     /**
      * Result of the last run.
@@ -74,7 +74,7 @@ export interface AdminVerifyGetVerifyResponseDataInner {
      * @type {number}
      * @memberof AdminVerifyGetVerifyResponseDataInner
      */
-    nextRun?: number;
+    nextRun?: bigint | string | number;
 
     /**
      * Namespace.
@@ -88,7 +88,7 @@ export interface AdminVerifyGetVerifyResponseDataInner {
      * @type {number}
      * @memberof AdminVerifyGetVerifyResponseDataInner
      */
-    outdatedAfter?: number;
+    outdatedAfter?: bigint | string | number;
 
     /**
      * The number of threads to use for reading chunks in verify job.
@@ -161,7 +161,7 @@ export function AdminVerifyGetVerifyResponseDataInnerFromJSONTyped(json: any, ig
         
         'ignoreVerified': json['ignore-verified'] == null ? undefined : json['ignore-verified'],
         
-        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : json['last-run-endtime'],
+        'lastRunEndtime': json['last-run-endtime'] == null ? undefined : BigInt(json['last-run-endtime']),
         
         'lastRunState': json['last-run-state'] == null ? undefined : json['last-run-state'],
         
@@ -169,11 +169,11 @@ export function AdminVerifyGetVerifyResponseDataInnerFromJSONTyped(json: any, ig
         
         'maxDepth': json['max-depth'] == null ? undefined : json['max-depth'],
         
-        'nextRun': json['next-run'] == null ? undefined : json['next-run'],
+        'nextRun': json['next-run'] == null ? undefined : BigInt(json['next-run']),
         
         'ns': json['ns'] == null ? undefined : json['ns'],
         
-        'outdatedAfter': json['outdated-after'] == null ? undefined : json['outdated-after'],
+        'outdatedAfter': json['outdated-after'] == null ? undefined : BigInt(json['outdated-after']),
         
         'readThreads': json['read-threads'] == null ? undefined : json['read-threads'],
         
@@ -204,7 +204,7 @@ export function AdminVerifyGetVerifyResponseDataInnerToJSONTyped(value?: AdminVe
         
         'ignore-verified': value['ignoreVerified'],
         
-        'last-run-endtime': value['lastRunEndtime'],
+        'last-run-endtime': value['lastRunEndtime'] == null ? undefined : String(value['lastRunEndtime']),
         
         'last-run-state': value['lastRunState'],
         
@@ -212,11 +212,11 @@ export function AdminVerifyGetVerifyResponseDataInnerToJSONTyped(value?: AdminVe
         
         'max-depth': value['maxDepth'],
         
-        'next-run': value['nextRun'],
+        'next-run': value['nextRun'] == null ? undefined : String(value['nextRun']),
         
         'ns': value['ns'],
         
-        'outdated-after': value['outdatedAfter'],
+        'outdated-after': value['outdatedAfter'] == null ? undefined : String(value['outdatedAfter']),
         
         'read-threads': value['readThreads'],
         

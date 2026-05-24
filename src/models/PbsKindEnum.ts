@@ -40,7 +40,9 @@ export function PbsKindEnumFromJSON(json: any): PbsKindEnum {
 }
 
 export function PbsKindEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsKindEnum {
+
     return json as PbsKindEnum;
+
 }
 
 export function PbsKindEnumToJSON(value?: PbsKindEnum | null): any {

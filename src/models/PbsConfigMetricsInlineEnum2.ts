@@ -41,7 +41,9 @@ export function PbsConfigMetricsInlineEnum2FromJSON(json: any): PbsConfigMetrics
 }
 
 export function PbsConfigMetricsInlineEnum2FromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsConfigMetricsInlineEnum2 {
+
     return json as PbsConfigMetricsInlineEnum2;
+
 }
 
 export function PbsConfigMetricsInlineEnum2ToJSON(value?: PbsConfigMetricsInlineEnum2 | null): any {

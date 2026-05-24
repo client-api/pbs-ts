@@ -25,7 +25,7 @@ export interface TapeDriveGetReadLabelResponseData {
      * @type {number}
      * @memberof TapeDriveGetReadLabelResponseData
      */
-    ctime: number;
+    ctime: bigint | string | number;
 
     /**
      * Encryption key fingerprint
@@ -46,7 +46,7 @@ export interface TapeDriveGetReadLabelResponseData {
      * @type {number}
      * @memberof TapeDriveGetReadLabelResponseData
      */
-    mediaSetCtime?: number;
+    mediaSetCtime?: bigint | string | number;
 
     /**
      * MediaSet Uuid (We use the all-zero Uuid to reserve an empty media for a specific pool).
@@ -67,7 +67,7 @@ export interface TapeDriveGetReadLabelResponseData {
      * @type {number}
      * @memberof TapeDriveGetReadLabelResponseData
      */
-    seqNr?: number;
+    seqNr?: bigint | string | number;
 
     /**
      * Media Uuid.
@@ -108,19 +108,19 @@ export function TapeDriveGetReadLabelResponseDataFromJSONTyped(json: any, ignore
     return {
         
         
-        'ctime': json['ctime'],
+        'ctime': BigInt(json['ctime']),
         
         'encryptionKeyFingerprint': json['encryption-key-fingerprint'] == null ? undefined : json['encryption-key-fingerprint'],
         
         'labelText': json['label-text'],
         
-        'mediaSetCtime': json['media-set-ctime'] == null ? undefined : json['media-set-ctime'],
+        'mediaSetCtime': json['media-set-ctime'] == null ? undefined : BigInt(json['media-set-ctime']),
         
         'mediaSetUuid': json['media-set-uuid'] == null ? undefined : json['media-set-uuid'],
         
         'pool': json['pool'] == null ? undefined : json['pool'],
         
-        'seqNr': json['seq-nr'] == null ? undefined : json['seq-nr'],
+        'seqNr': json['seq-nr'] == null ? undefined : BigInt(json['seq-nr']),
         
         'uuid': json['uuid'],
         
@@ -139,19 +139,19 @@ export function TapeDriveGetReadLabelResponseDataToJSONTyped(value?: TapeDriveGe
     return {
         
         
-        'ctime': value['ctime'],
+        'ctime': String(value['ctime']),
         
         'encryption-key-fingerprint': value['encryptionKeyFingerprint'],
         
         'label-text': value['labelText'],
         
-        'media-set-ctime': value['mediaSetCtime'],
+        'media-set-ctime': value['mediaSetCtime'] == null ? undefined : String(value['mediaSetCtime']),
         
         'media-set-uuid': value['mediaSetUuid'],
         
         'pool': value['pool'],
         
-        'seq-nr': value['seqNr'],
+        'seq-nr': value['seqNr'] == null ? undefined : String(value['seqNr']),
         
         'uuid': value['uuid'],
         

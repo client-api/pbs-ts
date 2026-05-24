@@ -44,7 +44,9 @@ export function PbsNodesDisksRaidlevelEnumFromJSON(json: any): PbsNodesDisksRaid
 }
 
 export function PbsNodesDisksRaidlevelEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesDisksRaidlevelEnum {
+
     return json as PbsNodesDisksRaidlevelEnum;
+
 }
 
 export function PbsNodesDisksRaidlevelEnumToJSON(value?: PbsNodesDisksRaidlevelEnum | null): any {

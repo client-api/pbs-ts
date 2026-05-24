@@ -25,7 +25,7 @@ export interface TapeDriveCreateUnloadRequest {
      * @type {number}
      * @memberof TapeDriveCreateUnloadRequest
      */
-    targetSlot?: number;
+    targetSlot?: bigint | string | number;
 
 }
 
@@ -49,7 +49,7 @@ export function TapeDriveCreateUnloadRequestFromJSONTyped(json: any, ignoreDiscr
     return {
         
         
-        'targetSlot': json['target-slot'] == null ? undefined : json['target-slot'],
+        'targetSlot': json['target-slot'] == null ? undefined : BigInt(json['target-slot']),
         
     };
 }
@@ -66,7 +66,7 @@ export function TapeDriveCreateUnloadRequestToJSONTyped(value?: TapeDriveCreateU
     return {
         
         
-        'target-slot': value['targetSlot'],
+        'target-slot': value['targetSlot'] == null ? undefined : String(value['targetSlot']),
         
     };
 }

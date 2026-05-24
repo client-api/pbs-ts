@@ -40,7 +40,9 @@ export function PbsNodesStatusCommandEnumFromJSON(json: any): PbsNodesStatusComm
 }
 
 export function PbsNodesStatusCommandEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsNodesStatusCommandEnum {
+
     return json as PbsNodesStatusCommandEnum;
+
 }
 
 export function PbsNodesStatusCommandEnumToJSON(value?: PbsNodesStatusCommandEnum | null): any {

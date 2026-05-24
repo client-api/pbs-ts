@@ -64,7 +64,9 @@ export function PbsDefaultLangEnumFromJSON(json: any): PbsDefaultLangEnum {
 }
 
 export function PbsDefaultLangEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsDefaultLangEnum {
+
     return json as PbsDefaultLangEnum;
+
 }
 
 export function PbsDefaultLangEnumToJSON(value?: PbsDefaultLangEnum | null): any {

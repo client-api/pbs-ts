@@ -41,7 +41,9 @@ export function PbsOriginEnumFromJSON(json: any): PbsOriginEnum {
 }
 
 export function PbsOriginEnumFromJSONTyped(json: any, ignoreDiscriminator: boolean): PbsOriginEnum {
+
     return json as PbsOriginEnum;
+
 }
 
 export function PbsOriginEnumToJSON(value?: PbsOriginEnum | null): any {

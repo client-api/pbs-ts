@@ -96,7 +96,7 @@ export interface NodesDisksGetListResponseDataInner {
      * @type {number}
      * @memberof NodesDisksGetListResponseDataInner
      */
-    rpm?: number;
+    rpm?: bigint | string | number;
 
     /**
      * Serisal number
@@ -110,7 +110,7 @@ export interface NodesDisksGetListResponseDataInner {
      * @type {number}
      * @memberof NodesDisksGetListResponseDataInner
      */
-    size: number;
+    size: bigint | string | number;
 
     /**
      * SMART status
@@ -202,11 +202,11 @@ export function NodesDisksGetListResponseDataInnerFromJSONTyped(json: any, ignor
         
         'partitions': json['partitions'] == null ? undefined : ((json['partitions'] as Array<any>).map(NodesDisksGetListResponseDataInnerPartitionsInnerFromJSON)),
         
-        'rpm': json['rpm'] == null ? undefined : json['rpm'],
+        'rpm': json['rpm'] == null ? undefined : BigInt(json['rpm']),
         
         'serial': json['serial'] == null ? undefined : json['serial'],
         
-        'size': json['size'],
+        'size': BigInt(json['size']),
         
         'status': PbsStatusEnumFromJSON(json['status']),
         
@@ -245,11 +245,11 @@ export function NodesDisksGetListResponseDataInnerToJSONTyped(value?: NodesDisks
         
         'partitions': value['partitions'] == null ? undefined : ((value['partitions'] as Array<any>).map(NodesDisksGetListResponseDataInnerPartitionsInnerToJSON)),
         
-        'rpm': value['rpm'],
+        'rpm': value['rpm'] == null ? undefined : String(value['rpm']),
         
         'serial': value['serial'],
         
-        'size': value['size'],
+        'size': String(value['size']),
         
         'status': PbsStatusEnumToJSON(value['status']),
         

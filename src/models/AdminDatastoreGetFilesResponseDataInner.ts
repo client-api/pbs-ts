@@ -47,7 +47,7 @@ export interface AdminDatastoreGetFilesResponseDataInner {
      * @type {number}
      * @memberof AdminDatastoreGetFilesResponseDataInner
      */
-    size?: number;
+    size?: bigint | string | number;
 
 }
 
@@ -80,7 +80,7 @@ export function AdminDatastoreGetFilesResponseDataInnerFromJSONTyped(json: any, 
         
         'filename': json['filename'],
         
-        'size': json['size'] == null ? undefined : json['size'],
+        'size': json['size'] == null ? undefined : BigInt(json['size']),
         
     };
 }
@@ -101,7 +101,7 @@ export function AdminDatastoreGetFilesResponseDataInnerToJSONTyped(value?: Admin
         
         'filename': value['filename'],
         
-        'size': value['size'],
+        'size': value['size'] == null ? undefined : String(value['size']),
         
     };
 }

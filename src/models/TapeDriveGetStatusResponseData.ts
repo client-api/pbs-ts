@@ -47,7 +47,7 @@ export interface TapeDriveGetStatusResponseData {
      * @type {number}
      * @memberof TapeDriveGetStatusResponseData
      */
-    blockNumber?: number;
+    blockNumber?: bigint | string | number;
 
     /**
      * Block size (0 is variable size)
@@ -68,14 +68,14 @@ export interface TapeDriveGetStatusResponseData {
      * @type {number}
      * @memberof TapeDriveGetStatusResponseData
      */
-    bytesRead?: number;
+    bytesRead?: bigint | string | number;
 
     /**
      * Total Bytes Written in Medium Life
      * @type {number}
      * @memberof TapeDriveGetStatusResponseData
      */
-    bytesWritten?: number;
+    bytesWritten?: bigint | string | number;
 
     /**
      * Compression enabled
@@ -103,14 +103,14 @@ export interface TapeDriveGetStatusResponseData {
      * @type {number}
      * @memberof TapeDriveGetStatusResponseData
      */
-    fileNumber?: number;
+    fileNumber?: bigint | string | number;
 
     /**
      * Medium Manufacture Date (epoch)
      * @type {number}
      * @memberof TapeDriveGetStatusResponseData
      */
-    manufactured?: number;
+    manufactured?: bigint | string | number;
 
     /**
      * Count of the total number of times the medium has passed over
@@ -118,7 +118,7 @@ export interface TapeDriveGetStatusResponseData {
      * @type {number}
      * @memberof TapeDriveGetStatusResponseData
      */
-    mediumPasses?: number;
+    mediumPasses?: bigint | string | number;
 
     /**
      * Estimated tape wearout factor (assuming max. 16000 end-to-end passes)
@@ -153,7 +153,7 @@ export interface TapeDriveGetStatusResponseData {
      * @type {number}
      * @memberof TapeDriveGetStatusResponseData
      */
-    volumeMounts?: number;
+    volumeMounts?: bigint | string | number;
 
     /**
      * Media is write protected
@@ -211,15 +211,15 @@ export function TapeDriveGetStatusResponseDataFromJSONTyped(json: any, ignoreDis
         
         'alertFlags': json['alert-flags'] == null ? undefined : json['alert-flags'],
         
-        'blockNumber': json['block-number'] == null ? undefined : json['block-number'],
+        'blockNumber': json['block-number'] == null ? undefined : BigInt(json['block-number']),
         
         'blocksize': json['blocksize'],
         
         'bufferMode': json['buffer-mode'],
         
-        'bytesRead': json['bytes-read'] == null ? undefined : json['bytes-read'],
+        'bytesRead': json['bytes-read'] == null ? undefined : BigInt(json['bytes-read']),
         
-        'bytesWritten': json['bytes-written'] == null ? undefined : json['bytes-written'],
+        'bytesWritten': json['bytes-written'] == null ? undefined : BigInt(json['bytes-written']),
         
         'compression': json['compression'],
         
@@ -227,11 +227,11 @@ export function TapeDriveGetStatusResponseDataFromJSONTyped(json: any, ignoreDis
         
         'driveActivity': json['drive-activity'] == null ? undefined : PbsActivityEnumFromJSON(json['drive-activity']),
         
-        'fileNumber': json['file-number'] == null ? undefined : json['file-number'],
+        'fileNumber': json['file-number'] == null ? undefined : BigInt(json['file-number']),
         
-        'manufactured': json['manufactured'] == null ? undefined : json['manufactured'],
+        'manufactured': json['manufactured'] == null ? undefined : BigInt(json['manufactured']),
         
-        'mediumPasses': json['medium-passes'] == null ? undefined : json['medium-passes'],
+        'mediumPasses': json['medium-passes'] == null ? undefined : BigInt(json['medium-passes']),
         
         'mediumWearout': json['medium-wearout'] == null ? undefined : json['medium-wearout'],
         
@@ -241,7 +241,7 @@ export function TapeDriveGetStatusResponseDataFromJSONTyped(json: any, ignoreDis
         
         'vendor': json['vendor'],
         
-        'volumeMounts': json['volume-mounts'] == null ? undefined : json['volume-mounts'],
+        'volumeMounts': json['volume-mounts'] == null ? undefined : BigInt(json['volume-mounts']),
         
         'writeProtect': json['write-protect'] == null ? undefined : json['write-protect'],
         
@@ -262,15 +262,15 @@ export function TapeDriveGetStatusResponseDataToJSONTyped(value?: TapeDriveGetSt
         
         'alert-flags': value['alertFlags'],
         
-        'block-number': value['blockNumber'],
+        'block-number': value['blockNumber'] == null ? undefined : String(value['blockNumber']),
         
         'blocksize': value['blocksize'],
         
         'buffer-mode': value['bufferMode'],
         
-        'bytes-read': value['bytesRead'],
+        'bytes-read': value['bytesRead'] == null ? undefined : String(value['bytesRead']),
         
-        'bytes-written': value['bytesWritten'],
+        'bytes-written': value['bytesWritten'] == null ? undefined : String(value['bytesWritten']),
         
         'compression': value['compression'],
         
@@ -278,11 +278,11 @@ export function TapeDriveGetStatusResponseDataToJSONTyped(value?: TapeDriveGetSt
         
         'drive-activity': PbsActivityEnumToJSON(value['driveActivity']),
         
-        'file-number': value['fileNumber'],
+        'file-number': value['fileNumber'] == null ? undefined : String(value['fileNumber']),
         
-        'manufactured': value['manufactured'],
+        'manufactured': value['manufactured'] == null ? undefined : String(value['manufactured']),
         
-        'medium-passes': value['mediumPasses'],
+        'medium-passes': value['mediumPasses'] == null ? undefined : String(value['mediumPasses']),
         
         'medium-wearout': value['mediumWearout'],
         
@@ -292,7 +292,7 @@ export function TapeDriveGetStatusResponseDataToJSONTyped(value?: TapeDriveGetSt
         
         'vendor': value['vendor'],
         
-        'volume-mounts': value['volumeMounts'],
+        'volume-mounts': value['volumeMounts'] == null ? undefined : String(value['volumeMounts']),
         
         'write-protect': value['writeProtect'],
         
