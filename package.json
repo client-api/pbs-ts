@@ -1,6 +1,6 @@
 {
   "name": "@clientapi/pbs",
-  "version": "2026.5.23",
+  "version": "2026.5.24",
   "description": "OpenAPI client for @clientapi/pbs",
   "author": "OpenAPI-Generator",
   "repository": {

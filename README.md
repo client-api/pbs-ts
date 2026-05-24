@@ -23,7 +23,7 @@ import { Configuration, Pbs } from '@clientapi/pbs';
 
 const cfg = new Configuration({
   basePath: 'https://pbs1.example.com:8007/api2/json',
-  apiKey: 'PBSAPIToken=user@realm!tokenid=uuid-secret',
+  apiKey: 'PBSAPIToken=user@realm!tokenid:uuid-secret',
 });
 const pbs = new Pbs(cfg);
 
