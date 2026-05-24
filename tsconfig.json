@@ -17,6 +17,8 @@
     "dist",
     "node_modules",
     "examples",
-    "src/tests"
+    "src/tests",
+    "e2e",
+    "vitest.config.ts"
   ]
 }

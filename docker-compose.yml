@@ -1,0 +1,32 @@
+# Local-dev convenience. CI uses client-api/proxmox-docker-action@v1 instead.
+#
+# Run-flag shape is kept identical across every language repo (pve-ts,
+# pbs-ts, pmg-ts, pdm-ts, plus the non-TS family) so a contributor can
+# read this file once and recognise it everywhere:
+#
+#   docker compose up -d
+#   curl -k https://localhost:8007/api2/json/version
+#
+# PBS doesn't need /dev/kvm for normal operation but the run-flag shape
+# is intentionally identical across products so the file is copy-pasteable
+# between repos. The KVM device is harmless on a PBS host; if the WSL
+# host lacks /dev/kvm, drop the `devices:` line.
+
+services:
+  pbs-test:
+    image: ghcr.io/client-api/proxmox-docker/pbs-test:4.2
+    container_name: pbs-test
+    privileged: true
+    devices:
+      - /dev/kvm
+    tmpfs:
+      - /run
+      - /run/lock
+      - /tmp
+    ports:
+      - "8007:8007"
+    healthcheck:
+      test: ["CMD", "curl", "-fsk", "https://localhost:8007/api2/json/version"]
+      interval: 5s
+      timeout: 3s
+      retries: 24

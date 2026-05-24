@@ -21,3 +21,15 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# ----------------------------------------------------------------------------
+# Hand-written E2E suite — preserved across `pnpm sdk:pbs-ts` regeneration
+# and `sdk-sync` push from pve-openapi. Verified via the sentinel procedure
+# in pve-openapi/docs/E2E_TEST_PLAN.md §3.1.1.
+# ----------------------------------------------------------------------------
+e2e/
+.github/workflows/e2e.yml
+vitest.config.ts
+docker-compose.yml
+pnpm-lock.yaml
+.openapi-generator-ignore
